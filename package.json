@@ -1,8 +1,10 @@
 {
-  "name": "Shimizumi Yuzuru",
+  "name": "Shimizumi_Yuzuru",
   "version": "1.0.0",
   "description": "Nishimiyayudzuru",
-  "main": "bot.js",
+  "scripts": {
+    "start": "node Shimizumi_Yuzuru.js"
+  },
   "author": "ArmFire1911",
   "dependencies": {
     "discord.js": "^11.3.2"
