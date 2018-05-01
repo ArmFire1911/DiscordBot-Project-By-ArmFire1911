@@ -10,7 +10,7 @@
 	```
 2. `npm start`
 
-## 感謝列表/Special thanks to
-1.papago89 啪啪狗
-2.frozenmouse 冰鼠老師
-3.Euphokumiko 交大屁孩哭米口
+## Special thanks to
+1.papago89 
+2.frozenmouse 
+3.Euphokumiko 
