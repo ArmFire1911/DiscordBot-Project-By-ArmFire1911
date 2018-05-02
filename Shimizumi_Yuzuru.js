@@ -18,13 +18,13 @@ const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最�
 const channelLock = ['結弦，指令表', '結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '結弦拍照^^', '樓下支援阿尼花心圖', '樓下支援阿姆咪花心圖', '樓下支援狼師', '天培語錄01', '天培語錄02', '是誰花心被打?', '色老頭', 'k哥語錄01', 'k哥語錄02', 'k哥語錄03', 'k哥語錄04', 'k哥語錄05', 'k哥語錄06', '結弦，在嗎?', '晚餐想吃什麼?', '吃拉麵好了', '真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?', '20噁男名單', '蒼幻語錄01']
 
 //內嵌式訊息模組
-function createEmbed(avatarURL, embedTitle, embedContent, pictureURL) {
+function createEmbed(data) {
     embed = new Discord.RichEmbed()
         .setTitle('西宮結弦')
-        .setThumbnail(avatarURL)
+        .setThumbnail(data.avatarURL)
         .setColor(16750026)
-        .addField(embedTitle, embedContent)
-        .setImage(pictureURL)
+        .addField(data.embedTitle, data.embedContent)
+        .setImage(data.pictureURL)
         .setFooter('西宮結弦')
         .setTimestamp();
     return embed;
@@ -125,35 +125,77 @@ client.on('message', (msg) => {
         //傲嬌集
         //傲嬌LV.1
         case '結弦可愛':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的老婆大人的訊息]', '好噁心!不准靠近我四公尺以內! \n不…不過這樣子也有點可憐，不然你屏住呼吸可以再前進一公尺', " "))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '好噁心!不准靠近我四公尺以內! \n不…不過這樣子也有點可憐，不然你屏住呼吸可以再前進一公尺',
+                pictureURL: ''
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
         //傲嬌Lv.2
         case '這...這是給我的便當嗎?':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的老婆大人的訊息]', '今天的便當，只是剛好有剩餘的食材才順手做的唷。 \n因為清理很麻煩，所以絕對不准你剩下來，知道了吧！', ''))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '今天的便當，只是剛好有剩餘的食材才順手做的唷。 \n因為清理很麻煩，所以絕對不准你剩下來，知道了吧！',
+                pictureURL: ''
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
         //傲嬌Lv.Max
         case '結弦最喜歡我了，對吧!':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的老婆大人的訊息]', '別、別說傻話了……我我我都說沒有了不是嗎！？', ''))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '別、別說傻話了……我我我都說沒有了不是嗎！？',
+                pictureURL: ''
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
 
         //病嬌模式
         case '那個女孩很可愛呢':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的老婆大人的訊息]', '花心是不好的哦...對吧，惠勝 ^^ :knife::chicken:', ''))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '花心是不好的哦...對吧，惠勝 ^^ :knife::chicken:',
+                pictureURL: ''
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
 
         //新婚三問
         case '我回來了!':
-            msg.channel.send(createEmbed('https://i.imgur.com/bb10UWY.jpg', '[來自最可愛的老婆大人的訊息]', '你要先吃飯? \n還是先洗澡? \n還是先·吃·我?', ''))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/bb10UWY.jpg',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '你要先吃飯? \n還是先洗澡? \n還是先·吃·我?',
+                pictureURL: ''
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
 
         //拍照
         //正常拍照
         case '結弦，拍照~':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的老婆大人的訊息]', '如果是你要拍的話...好吧，只有一次喔!', 'https://i.imgur.com/3g8Y8jE.png'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '如果是你要拍的話...好吧，只有一次喔!',
+                pictureURL: 'https://i.imgur.com/3g8Y8jE.png'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
         //糟糕拍照
         case '結弦，拍照^^':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的老婆大人的訊息]', '不...不行!絕對不行!!!!', 'https://i.imgur.com/kKxUFRr.jpg'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '不...不行!絕對不行!!!!',
+                pictureURL: 'https://i.imgur.com/kKxUFRr.jpg'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
 
 
@@ -161,35 +203,77 @@ client.on('message', (msg) => {
         //黑歷史
         //花心系列
         case '樓下支援阿尼花心圖':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '花心是不好的喔，阿尼^^ :knife::chicken:', 'https://i.imgur.com/dwmVnuX.png'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '花心是不好的喔，阿尼^^ :knife::chicken:',
+                pictureURL: 'https://i.imgur.com/dwmVnuX.png'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
         case '樓下支援阿姆咪花心圖':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '花心是不好的喔，Amulet1 ^^ :knife::chicken:', 'https://i.imgur.com/Vx06cOp.jpg'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
+                pictureURL: 'https://i.imgur.com/Vx06cOp.jpg'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
         case '是誰花心被打?':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '是阿尼~~~', 'https://i.imgur.com/606lQCP.png'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '是阿尼~~~',
+                pictureURL: 'https://i.imgur.com/606lQCP.png'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
 
         //狼師
         case '樓下支援狼師':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '雞鴨!', 'https://i.imgur.com/uc4kwl4.jpg'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '雞鴨!',
+                pictureURL: 'https://i.imgur.com/uc4kwl4.jpg'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
 
         //20噁男
         case '20噁男名單':
             msg.channel.send('```你要的名單 【創立成功】\nlotus.20129@gmail.com \nexejtyu3@gmail.com \ndarkfrozex@gmail.com \nTestPlayerII \nmoebear \nq0500 \nhjgeiurysgher@gmail.com \ngintsuki0203@gmail.com \ntaiwan1998 \nb06403033 \n40671127@gm.nfu.edu.tw \nkanokanocat \nqqqqqqd45@gmail.com \nlinyosun@gmail.com \nkk2025 \nEuphokumiko \nkujoieyasu \nb960047125 \ns57836 \ngamania0515 \nSmallYue1 \n等人投資的「琳達 Linda公司創立計劃」成功了，該公司正式上市，初始股價為$8！```')
-            msg.channel.send(createEmbed('', '', '', 'https://media.discordapp.net/attachments/354939541087322113/440372207810641920/ssssss.JPG'))
+            embedData = {
+                avatarURL: '',
+                embedTitle: '',
+                embedContent: '',
+                pictureURL: 'https://media.discordapp.net/attachments/354939541087322113/440372207810641920/ssssss.JPG'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
 
         //色老頭
         case '色老頭':
-            msg.channel.send(createEmbed('', '', '', 'https://media.discordapp.net/attachments/425557740564512769/439721838226964480/Screenshot_20180428-173723.png?width=340&height=605'))
+            embedData = {
+                avatarURL: '',
+                embedTitle: '',
+                embedContent: '',
+                pictureURL: 'https://media.discordapp.net/attachments/425557740564512769/439721838226964480/Screenshot_20180428-173723.png?width=340&height=605'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
 
         //語錄系列
         //天培語錄
         case '天培語錄01':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '天培，雞鴨!', 'https://i.imgur.com/ZET0uZx.jpg'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '天培，雞鴨!',
+                pictureURL: 'https://i.imgur.com/ZET0uZx.jpg'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
         case '天培語錄02':
             msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '天培，雞鴨!', 'https://i.imgur.com/GQsgoD3.png'))
@@ -197,27 +281,69 @@ client.on('message', (msg) => {
 
         //k哥語錄
         case 'k哥語錄01':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '呷kㄝ肖年家~係禱灰~~~', 'https://i.imgur.com/3oh9uYz.png'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                pictureURL: 'https://i.imgur.com/3oh9uYz.png'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
         case 'k哥語錄02':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '呷kㄝ肖年家~係禱灰~~~', 'https://i.imgur.com/Wt3ggTS.jpg'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                pictureURL: 'https://i.imgur.com/Wt3ggTS.jpg'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
         case 'k哥語錄03':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '呷kㄝ肖年家~係禱灰~~~', 'https://i.imgur.com/sjtUBP8.png'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                pictureURL: 'https://i.imgur.com/sjtUBP8.png'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
         case 'k哥語錄04':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '呷kㄝ肖年家~係禱灰~~~', 'https://i.imgur.com/36VtpKq.png'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                pictureURL: 'https://i.imgur.com/36VtpKq.png'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
         case 'k哥語錄05':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '呷kㄝ肖年家~係禱灰~~~', 'https://i.imgur.com/FoBhCkI.jpg'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                pictureURL: 'https://i.imgur.com/FoBhCkI.jpg'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
         case 'k哥語錄06':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '呷kㄝ肖年家~係禱灰~~~', 'https://i.imgur.com/ajFuPl7.png'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                pictureURL: 'https://i.imgur.com/ajFuPl7.png'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
 
         //蒼幻語錄
         case '蒼幻語錄01':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '查無不法，謝謝指教˙ˇ˙', 'https://i.imgur.com/7Rp7fsR.png'))
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '查無不法，謝謝指教˙ˇ˙',
+                pictureURL: 'https://i.imgur.com/7Rp7fsR.png'
+            };
+            msg.channel.send(createEmbed(embedData))
             break;
             
         default: return
