@@ -2,22 +2,21 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({ autoReconnect: true });
 
-//內嵌式訊息模組變數設定
-//大頭貼網址變數
 const AvatarURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
-//照片網址變數
+//大頭貼網址變數
 const PictureURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
-//內嵌對話框標題
+//照片網址變數
 const EmbedTitle = ' ';
-//內嵌對話框內文
+//內嵌對話框標題
 const EmbedContent = ' ';
+//內嵌對話框內文
 
-//限制使用者使用的指令組
 const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^', '結弦，在嗎?', '晚餐想吃什麼?', '吃拉麵好了', '真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?']
-//限制不能於特定頻道使用的指令組
+//限制使用者使用的指令組
 const channelLock = ['結弦，指令表', '結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '結弦拍照^^', '樓下支援阿尼花心圖', '樓下支援阿姆咪花心圖', '樓下支援狼師', '天培語錄01', '天培語錄02', '是誰花心被打?', '色老頭', 'k哥語錄01', 'k哥語錄02', 'k哥語錄03', 'k哥語錄04', 'k哥語錄05', 'k哥語錄06', '結弦，在嗎?', '晚餐想吃什麼?', '吃拉麵好了', '真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?', '20噁男名單', '蒼幻語錄01']
+//限制不能於特定頻道使用的指令組
 
-//內嵌式訊息模組
+
 function createEmbed(data) {
     embed = new Discord.RichEmbed()
         .setTitle('西宮結弦')
@@ -29,19 +28,17 @@ function createEmbed(data) {
         .setTimestamp();
     return embed;
 }
+//內嵌式訊息模組
 
-//於cmd回傳啟動訊息
 client.on("ready", () => {
-    // This event will run if the bot starts, and logs in, successfully.
     console.log(`結弦回家囉!接觸了 ${client.users.size} 位成員，看到了 ${client.channels.size} 個頻道，加入了 ${client.guilds.size} 個伺服器`);
     //用於統計使用者
     client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 client.on('ready', () => {
     console.log(`以 ${client.user.tag}身分登入了!`);
-});
+});//於cmd回傳啟動訊息
 
-//禁止頻道模組
 function forbid(channel)
 {
     if ((channel.name == '蒲團') || (channel.name == 'syaro與史蒂芬妮-多拉') || (channel.name == '股市鬧鐘bot') || (channel.name == 'bugs') || (channel.name == 'exchange-center') || (channel.name == 'countersigned') || (channel.name == 'lobby') || (channel.name == 'hall') || (channel.name == 'har_pt') || (channel.name == 'har_manager') || (channel.name == 'plans-rule-sugguestion') || (channel.name == 'product_center') || (channel.name == 'reports') || (channel.name == 'recieve_instantmessage')) {
@@ -50,7 +47,7 @@ function forbid(channel)
     else {
         return false;
     }
-}
+}//禁止頻道模組
 //許可使用者模組
 function detect(author)
 {
@@ -66,32 +63,32 @@ function detect(author)
 client.on('message', (msg) => {
     let lit, command;
     lit = msg.content;
-
-    //在讀取時忽略%
+     
     if (lit.substring(0, 1) == '%') {
         lit = lit.split('%')[1];
     }
-    //找出命令斷點
-    command = lit.split(/\s/)[0]
+    //在讀取時忽略%
 
-    //使用者限制載入
+    command = lit.split(/\s/)[0]
+    //找出命令斷點
+
     if (userLock.includes(command)) {
         if (detect(msg.author)) {
             return;
         }
     }
-    //頻道限制模組載入
+    //使用者限制載入
+
     if (channelLock.includes(command)) {
         if (forbid(msg.channel)) {
             return;
         }
     }
-
+    //頻道限制模組載入
 
     //命令設定
     switch (command) {
         //老婆模組
-        //老夫老妻問答集
         case '結弦，在嗎?':
             msg.channel.send('在阿，怎麼了?')
             break;
@@ -120,10 +117,8 @@ client.on('message', (msg) => {
             msg.channel.send('大概，是像這樣子吧?孩子的爸')
             msg.channel.send(createEmbed('', '', '', 'https://i.imgur.com/vljAZT4.png'))
             break;
-        //老夫老妻問答集結尾
 
         //傲嬌集
-        //傲嬌LV.1
         case '結弦可愛':
             embedData = {
                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
@@ -133,7 +128,6 @@ client.on('message', (msg) => {
             };
             msg.channel.send(createEmbed(embedData))
             break;
-        //傲嬌Lv.2
         case '這...這是給我的便當嗎?':
             embedData = {
                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
@@ -143,7 +137,6 @@ client.on('message', (msg) => {
             };
             msg.channel.send(createEmbed(embedData))
             break;
-        //傲嬌Lv.Max
         case '結弦最喜歡我了，對吧!':
             embedData = {
                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
