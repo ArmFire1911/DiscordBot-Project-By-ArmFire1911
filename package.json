@@ -1,9 +1,9 @@
 {
-  "name": "Shimizumi_Yuzuru",
+  "name": "Nishimi_Yayudzuru",
   "version": "1.0.0",
-  "description": "Nishimiyayudzuru",
+  "description": "NishimiyaYudzuru",
   "scripts": {
-    "start": "node Shimizumi_Yuzuru.js"
+    "start": "node Nishimi_Yayudzuru.js"
   },
   "author": "ArmFire1911",
   "dependencies": {

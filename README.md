@@ -1,4 +1,4 @@
-# Shimizumi_Yuzuru-DiscordBot
+# Nishimi_Yayudzuru-DiscordBot
 
 ## Run Project
 1. `npm install`
