@@ -24,7 +24,7 @@ function createEmbed(data) {
         .setColor(16750026)
         .addField(data.embedTitle, data.embedContent)
         .setImage(data.pictureURL)
-        .setFooter('西宮結弦')
+        .setFooter('來自結弦のIPhone')
         .setTimestamp();
     return embed;
 }
@@ -33,7 +33,7 @@ function createEmbed(data) {
 client.on("ready", () => {
     console.log(`結弦回家囉!接觸了 ${client.users.size} 位成員，看到了 ${client.channels.size} 個頻道，加入了 ${client.guilds.size} 個伺服器`);
     //用於統計使用者
-    client.user.setActivity(`Serving ${client.guilds.size} servers`);
+    client.user.setActivity(`陪ArmFire1911聊天`);
 });
 client.on('ready', () => {
     console.log(`以 ${client.user.tag}身分登入了!`);
