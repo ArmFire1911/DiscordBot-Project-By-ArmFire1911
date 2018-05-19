@@ -367,7 +367,7 @@ client.on('message', (msg) => {
             }
             else {
                 switch (whoTrigger[msg.author].useWhat) {
-                    case 'Maruze01':
+                    case 'Maruze':
                         embedData = {
                             avatarURL: 'https://i.imgur.com/vljAZT4.png',
                             embedTitle: '[來自最可愛的結弦的訊息]',
