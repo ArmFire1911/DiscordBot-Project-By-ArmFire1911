@@ -340,6 +340,8 @@ client.on('message', (msg) => {
                 embedContent: '是阿尼~~~',
                 pictureURL: 'https://i.imgur.com/606lQCP.png'
             };
+            msg.channel.send(createEmbed(embedData))
+            break;
         case '20噁男名單':
             msg.channel.send(
                 '```' +
