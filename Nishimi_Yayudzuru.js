@@ -237,7 +237,7 @@ client.on('message', (msg) => {
                 '```' +
                 '樓下支援花心圖\n' +
                 '\n' +
-                'Maruze語錄' +
+                'Maruze語錄\n' +
                 '\n'+
                 '天陪語錄\n' +
                 '\n'+
