@@ -1,6 +1,6 @@
 ﻿const Discord = require('discord.js');
 const client = new Discord.Client({ autoReconnect: true });
-
+const request = require('request');
 const http = require('http');
 http.createServer(function (request, response) {
     response.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -21,6 +21,7 @@ const httpGet = function (url) {
         );
 };
 setInterval(function () { httpGet('https://yayudzu-discord-bot.herokuapp.com/'); }, 600000);
+setInterval(function () { httpGet('https://yayudzu-discord-bot.herokuapp.com/'); }, 5239);
 //避免結弦關掉的模組，感謝レミフラ最高
 
 const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^', '結弦，在嗎?', '晚餐想吃什麼?', '吃拉麵好了', '真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?']
@@ -61,7 +62,7 @@ client.on('ready', () => {
 
 function forbid(channel)
 {
-    if ((channel.name == '蒲團') || (channel.name == 'syaro與史蒂芬妮-多拉') || (channel.name == '股市鬧鐘bot') || (channel.name == 'bugs') || (channel.name == 'exchange-center') || (channel.name == 'countersigned') || (channel.name == 'lobby') || (channel.name == 'hall') || (channel.name == 'har_pt') || (channel.name == 'har_manager') || (channel.name == 'plans-rule-sugguestion') || (channel.name == 'product_center') || (channel.name == 'reports') || (channel.name == 'recieve_instantmessage')) {
+    if ((channel.name == '蒲團') || (channel.name == 'syaro與史蒂芬妮-多拉') || (channel.name == '股市鬧鐘bot') || (channel.name == 'bugs') || (channel.name == 'exchange-center') || (channel.name == 'countersigned') || (channel.name == 'lobby') || (channel.name == 'hall') || (channel.name == 'har_pt') || (channel.name == 'har_manager') || (channel.name == 'plans-rule-sugguestion') || (channel.name == 'product_center') || (channel.name == 'reports') || (channel.name == 'recieve_instantmessage') || (channel.name == '茶水間')) {
         return true;
     }
     else {
