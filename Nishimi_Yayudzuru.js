@@ -6,6 +6,22 @@ http.createServer(function (request, response) {
     response.writeHead(200, { 'Content-Type': 'text/plain' });
     response.end('kurone is running\n');
 }).listen(process.env.PORT || 5239);
+const httpGet = function (url) {
+    request.get
+        (
+        url,
+        { json: { key: 'value' } },
+        function (error, response, body) {
+            console.log(`send a post to ${url}`);
+            if (!error && response.statusCode == 200)
+                console.log(`OK`);
+            else
+                console.log(`return code: ${response.statusCode}`);
+        }
+        );
+};
+setInterval(function () { httpGet('https://yayudzu-discord-bot.herokuapp.com/'); }, 600000);
+//避免結弦關掉的模組，感謝レミフラ最高
 
 const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^', '結弦，在嗎?', '晚餐想吃什麼?', '吃拉麵好了', '真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?']
 //限制使用者使用的指令組
