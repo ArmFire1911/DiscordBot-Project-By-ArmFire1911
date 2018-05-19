@@ -1,5 +1,4 @@
-﻿const auth = require('./auth.json');
-const Discord = require('discord.js');
+﻿const Discord = require('discord.js');
 const client = new Discord.Client({ autoReconnect: true });
 
 let lastUser = {};
@@ -530,4 +529,4 @@ client.on('message', (msg) => {
     );//使用紀錄
 });
 
-client.login(auth.token);
+client.login(process.env['token']);
