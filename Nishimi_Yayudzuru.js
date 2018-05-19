@@ -1,16 +1,11 @@
 ﻿const Discord = require('discord.js');
 const client = new Discord.Client({ autoReconnect: true });
 
-let lastUser = {};
-
-const AvatarURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
-//大頭貼網址變數
-const PictureURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
-//照片網址變數
-const EmbedTitle = ' ';
-//內嵌對話框標題
-const EmbedContent = ' ';
-//內嵌對話框內文
+const http = require('http');
+http.createServer(function (request, response) {
+    response.writeHead(200, { 'Content-Type': 'text/plain' });
+    response.end('kurone is running\n');
+}).listen(process.env.PORT || 5239);
 
 const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^', '結弦，在嗎?', '晚餐想吃什麼?', '吃拉麵好了', '真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?']
 //限制使用者使用的指令組
@@ -30,6 +25,14 @@ function createEmbed(data) {
     return embed;
 }
 //內嵌式訊息模組
+const AvatarURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
+//大頭貼網址變數
+const PictureURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
+//照片網址變數
+const EmbedTitle = ' ';
+//內嵌對話框標題
+const EmbedContent = ' ';
+//內嵌對話框內文
 
 client.on("ready", () => {
     console.log(`結弦回家囉!接觸了 ${client.users.size} 位成員，看到了 ${client.channels.size} 個頻道，加入了 ${client.guilds.size} 個伺服器`);
