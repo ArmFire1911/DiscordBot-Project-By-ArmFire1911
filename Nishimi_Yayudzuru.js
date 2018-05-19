@@ -1,7 +1,5 @@
 ﻿const Discord = require('discord.js');
 const client = new Discord.Client({ autoReconnect: true });
-const request = require('request');
-const http = require('http');
 //listen port
 const http = require('http');
 http.createServer(function (request, response) {
