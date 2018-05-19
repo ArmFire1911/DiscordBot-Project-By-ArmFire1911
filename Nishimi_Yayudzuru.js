@@ -2,17 +2,21 @@
 const client = new Discord.Client({ autoReconnect: true });
 const request = require('request');
 const http = require('http');
+//listen port
+const http = require('http');
 http.createServer(function (request, response) {
     response.writeHead(200, { 'Content-Type': 'text/plain' });
     response.end('kurone is running\n');
 }).listen(process.env.PORT || 5239);
-const httpGet = function (url) {
+//ping automatically
+const request = require('request');
+const makeItAlive = function () {
     request.get
         (
-        url,
-        { json: { key: 'value' } },
+        'https://yayudzu-discord-bot.herokuapp.com/',
+        {},
         function (error, response, body) {
-            console.log(`send a post to ${url}`);
+            console.log(`send a post`);
             if (!error && response.statusCode == 200)
                 console.log(`OK`);
             else
@@ -20,8 +24,8 @@ const httpGet = function (url) {
         }
         );
 };
-setInterval(function () { httpGet('https://yayudzu-discord-bot.herokuapp.com/'); }, 600000);
-setInterval(function () { httpGet('https://yayudzu-discord-bot.herokuapp.com/'); }, 5239);
+setInterval(makeItAlive, 600000);
+setTimeout(makeItAlive, 5239);
 //避免結弦關掉的模組，感謝レミフラ最高
 
 const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^', '結弦，在嗎?', '晚餐想吃什麼?', '吃拉麵好了', '真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?']
