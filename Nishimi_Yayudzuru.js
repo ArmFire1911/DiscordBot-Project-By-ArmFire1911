@@ -2,6 +2,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({ autoReconnect: true });
 
+let lastUser = {};
+
 const AvatarURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
 //大頭貼網址變數
 const PictureURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
@@ -59,16 +61,19 @@ function detect(author)
     }
 }
 
+let whoTrigger = {};
+
 //指令設定區
 client.on('message', (msg) => {
-    let lit, command;
+    let lit , command;
     lit = msg.content;
-     
+    lastUser = msg.author;
+
     if (lit.substring(0, 1) == '%') {
         lit = lit.split('%')[1];
     }
     //在讀取時忽略%
-
+    
     command = lit.split(/\s/)[0]
     //找出命令斷點
 
@@ -191,10 +196,107 @@ client.on('message', (msg) => {
             msg.channel.send(createEmbed(embedData))
             break;
 
+        //語錄系列
+        case 'test':
+            if (whoTrigger[msg.author] == undefined) {
+                whoTrigger[msg.author] = {
+                    theUser: msg.author,
+                    useWhat: command,
+                    countTimes: 1
+                };
+            }
+            else {
+                whoTrigger[msg.author].countTimes++;
+            };
+            msg.channel.send(whoTrigger[msg.author].countTimes)
+            break;
 
-        //公用指令
-        //黑歷史
-        //花心系列
+        //語錄總綱
+        case '結弦help':
+            msg.channel.send(
+                '我所撰寫的這本書 *ACGN股民語錄集* 乃集ACGN股民眾多幹話、黑歷史於一身之曠世巨作，請選擇你要查看的冊目\n' +
+                '語錄組：'+
+                '```' +
+                '樓下支援花心圖\n' +
+                '\n' +
+                'Maruze語錄' +
+                '\n'+
+                '天陪語錄\n' +
+                '\n'+
+                'k哥語錄\n' +
+                '\n'+
+                '蒼幻語錄' +
+                '```'+
+                '黑歷史：' +
+                '```' +
+                '是誰花心被打?\n' +
+                '\n'+
+                '20噁男名單\n' +
+                '\n' +
+                '色老頭\n' +
+                '```'
+            )
+            break;
+
+        case 'Maruze語錄':
+            whoTrigger[msg.author] = {
+                theUser: msg.author,
+                useWhat: command,
+            };
+            msg.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.練肌肌\n' +
+                '```'
+            )
+            console.log(whoTrigger[msg.author].useWhat);
+            break;
+        case '天陪語錄':
+            whoTrigger[msg.author] = {
+                theUser: msg.author,
+                useWhat: command,
+            };
+            msg.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.想當光源氏\n' +
+                '02.東歐蘿莉的幻想' +
+                '```'
+            )
+            console.log(whoTrigger[msg.author].useWhat);
+            break;
+        case 'k哥語錄':
+            whoTrigger[msg.author] = {
+                theUser: msg.author,
+                useWhat: command,
+            };
+            msg.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.張開你的嘴~靠近我雙腿~\n' +
+                '02.來學校就是為了要...\n'+
+                '03.我覺得禱輝一定有...\n' +
+                '04.我幹過...\n'+
+                '05.自己都不夠吸' +
+                '06.~~幹缺錢啦~~' +
+                '```'
+            )
+            console.log(whoTrigger[msg.author].useWhat);
+            break;
+        case '蒼幻語錄':
+            whoTrigger[msg.author] = {
+                theUser: msg.author,
+                useWhat: command,
+            };
+            msg.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.警察叔叔，就是這個警察!' +
+                '```'
+            )
+            console.log(whoTrigger[msg.author].useWhat);
+            break;
+
         case '樓下支援阿尼花心圖':
             embedData = {
                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
@@ -220,129 +322,210 @@ client.on('message', (msg) => {
                 embedContent: '是阿尼~~~',
                 pictureURL: 'https://i.imgur.com/606lQCP.png'
             };
-            msg.channel.send(createEmbed(embedData))
-            break;
-
-        //狼師
-        case '樓下支援狼師':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '雞鴨!',
-                pictureURL: 'https://i.imgur.com/uc4kwl4.jpg'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
-
-        //20噁男
         case '20噁男名單':
-            msg.channel.send('```你要的名單 【創立成功】\nlotus.20129@gmail.com \nexejtyu3@gmail.com \ndarkfrozex@gmail.com \nTestPlayerII \nmoebear \nq0500 \nhjgeiurysgher@gmail.com \ngintsuki0203@gmail.com \ntaiwan1998 \nb06403033 \n40671127@gm.nfu.edu.tw \nkanokanocat \nqqqqqqd45@gmail.com \nlinyosun@gmail.com \nkk2025 \nEuphokumiko \nkujoieyasu \nb960047125 \ns57836 \ngamania0515 \nSmallYue1 \n等人投資的「琳達 Linda公司創立計劃」成功了，該公司正式上市，初始股價為$8！```')
-            embedData = {
-                avatarURL: '',
-                embedTitle: '',
-                embedContent: '',
-                pictureURL: 'https://media.discordapp.net/attachments/354939541087322113/440372207810641920/ssssss.JPG'
-            };
-            msg.channel.send(createEmbed(embedData))
+            msg.channel.send(
+                '```' +
+                '你要的名單 【創立成功】\n' +
+                'lotus.20129@gmail.com \n' +
+                'exejtyu3@gmail.com \n' +
+                'darkfrozex@gmail.com \n' +
+                'TestPlayerII \n' +
+                'moebear \n' +
+                'q0500 \n' +
+                'hjgeiurysgher@gmail.com \n' +
+                'gintsuki0203@gmail.com \n' +
+                'taiwan1998 \n' +
+                'b06403033 \n' +
+                '40671127@gm.nfu.edu.tw \n' +
+                'kanokanocat \n' +
+                'qqqqqqd45@gmail.com \n' +
+                'linyosun@gmail.com \n' +
+                'kk2025 \n' +
+                'Euphokumiko \n' +
+                'kujoieyasu \n' +
+                'b960047125 \n' +
+                's57836 \n' +
+                'gamania0515 \n' +
+                'SmallYue1 \n' +
+                '等人投資的「琳達 Linda公司創立計劃」成功了，該公司正式上市，初始股價為$8！'+
+                '```'
+            )
+            embed = new Discord.RichEmbed()
+                .setColor(16750026)
+                .setImage('https://i.imgur.com/evZLWQY.jpg')
+            msg.channel.send(embed)
             break;
-
-        //色老頭
         case '色老頭':
-            embedData = {
-                avatarURL: '',
-                embedTitle: '',
-                embedContent: '',
-                pictureURL: 'https://media.discordapp.net/attachments/425557740564512769/439721838226964480/Screenshot_20180428-173723.png?width=340&height=605'
-            };
-            msg.channel.send(createEmbed(embedData))
+            embed = new Discord.RichEmbed()
+                .setColor(16750026)
+                .setImage('https://i.imgur.com/yNMYnve.png')
+            msg.channel.send(embed)
             break;
 
-        //語錄系列
-        //天培語錄
-        case '天培語錄01':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '天培，雞鴨!',
-                pictureURL: 'https://i.imgur.com/ZET0uZx.jpg'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
-        case '天培語錄02':
-            msg.channel.send(createEmbed('https://i.imgur.com/vljAZT4.png', '[來自最可愛的結弦的訊息]', '天培，雞鴨!', 'https://i.imgur.com/GQsgoD3.png'))
-            break;
+        case '01':
+            if (whoTrigger[msg.author] == undefined) {
+                return;
+            }
+            else {
+                switch (whoTrigger[msg.author].useWhat) {
+                    case 'Maruze01':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '雞鴨!',
+                            pictureURL: 'https://i.imgur.com/uc4kwl4.jpg'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                    case '天陪語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '天培，雞鴨!',
+                            pictureURL: 'https://i.imgur.com/ZET0uZx.jpg'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                    case 'k哥語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                            pictureURL: 'https://i.imgur.com/3oh9uYz.png'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                    case '蒼幻語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '查無不法，謝謝指教˙ˇ˙',
+                            pictureURL: 'https://i.imgur.com/7Rp7fsR.png'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                };
+                delete (whoTrigger[msg.author]);
+                break;
+            }
+        case '02':
+            if (whoTrigger[msg.author] == undefined) {
+                return;
+            }
+            else {
+                switch (whoTrigger[msg.author].useWhat) {
+                    case '天陪語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '天培，雞鴨!',
+                            pictureURL: 'https://i.imgur.com/GQsgoD3.png'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                    case 'k哥語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                            pictureURL: 'https://i.imgur.com/Wt3ggTS.jpg'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                };
+                delete (whoTrigger[msg.author]);
+                break;
+            }
+        case '03':
+            if (whoTrigger[msg.author] == undefined) {
+                return;
+            }
+            else {
+                switch (whoTrigger[msg.author].useWhat) {
+                    case 'k哥語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                            pictureURL: 'https://i.imgur.com/sjtUBP8.png'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                };
+                delete (whoTrigger[msg.author]);
+                break;
+            }
+        case '04':
+            if (whoTrigger[msg.author] == undefined) {
+                return;
+            }
+            else {
+                switch (whoTrigger[msg.author].useWhat) {
+                    case 'k哥語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                            pictureURL: 'https://i.imgur.com/36VtpKq.png'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                };
+                delete (whoTrigger[msg.author]);
+                break;
+            }
+        case '05':
+            if (whoTrigger[msg.author] == undefined) {
+                return;
+            }
+            else {
+                switch (whoTrigger[msg.author].useWhat) {
+                    case 'k哥語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                            pictureURL: 'https://i.imgur.com/FoBhCkI.jpg'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                };
+                delete (whoTrigger[msg.author]);
+                break;
+            }
+        case '06':
+            if (whoTrigger[msg.author] == undefined) {
+                return;
+            }
+            else {
+                switch (whoTrigger[msg.author].useWhat) {
+                    case '天陪語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '天培，雞鴨!',
+                            pictureURL: 'https://i.imgur.com/GQsgoD3.png'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                    case 'k哥語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                            pictureURL: 'https://i.imgur.com/ajFuPl7.png'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
 
-        //k哥語錄
-        case 'k哥語錄01':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                pictureURL: 'https://i.imgur.com/3oh9uYz.png'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
-        case 'k哥語錄02':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                pictureURL: 'https://i.imgur.com/Wt3ggTS.jpg'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
-        case 'k哥語錄03':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                pictureURL: 'https://i.imgur.com/sjtUBP8.png'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
-        case 'k哥語錄04':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                pictureURL: 'https://i.imgur.com/36VtpKq.png'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
-        case 'k哥語錄05':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                pictureURL: 'https://i.imgur.com/FoBhCkI.jpg'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
-        case 'k哥語錄06':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                pictureURL: 'https://i.imgur.com/ajFuPl7.png'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
-
-        //蒼幻語錄
-        case '蒼幻語錄01':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '查無不法，謝謝指教˙ˇ˙',
-                pictureURL: 'https://i.imgur.com/7Rp7fsR.png'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
+                };
+                delete (whoTrigger[msg.author]);
+                break;
+            }
             
         default: return
     }
-
-   console.log(
+    console.log(
         `${msg.author}在${msg.channel}說：${msg.content}`
     );//使用紀錄
 });
