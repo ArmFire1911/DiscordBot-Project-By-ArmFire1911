@@ -84,18 +84,6 @@ function detect(author) {
     }
 }
 
-function detect(channel) {
-    if ((channel.id !== '354939541087322113')) {
-        console.log(
-            `${msg.author.username}(${msg.author})在hall說了：${msg.content}`
-        );
-        return;
-    }
-    else {
-        return ;
-    }
-}
-
 let whoTrigger = {};
 
 //指令設定區
@@ -111,6 +99,16 @@ client.on('message', (msg) => {
     
     command = lit.split(/\s/)[0]
     //找出命令斷點
+
+    if ((channel.id !== '354939541087322113')) {
+        console.log(
+            `${msg.author.username}(${msg.author})在hall說了：${msg.content}`
+        );
+        return;
+    }
+    else {
+        return;
+    }
 
     if (userLock.includes(command)) {
         if (detect(msg.author)) {
