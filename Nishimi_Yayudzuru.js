@@ -1,5 +1,6 @@
 ﻿const Discord = require('discord.js');
 const client = new Discord.Client({ autoReconnect: true });
+
 //listen port
 const http = require('http');
 http.createServer(function (request, response) {
@@ -23,11 +24,13 @@ const makeItAlive = function () {
         );
 };
 setInterval(makeItAlive, 600000);
-//避免結弦關掉的模組，感謝レミフラ最高
+//避免結弦關掉的模組，感謝「sup初音姐姐」提供幫助
 
-const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^', '結弦，在嗎?', '晚餐想吃什麼?', '吃拉麵好了', '真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?']
+const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢',
+                  '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^', '結弦，在嗎?', '晚餐想吃什麼?'
+                  , '吃拉麵好了','真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?']
 //限制使用者使用的指令組
-const channelLock = ['結弦，指令表', '結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '結弦拍照^^', '樓下支援阿尼花心圖', '樓下支援阿姆咪花心圖', '樓下支援狼師', '天培語錄01', '天培語錄02', '是誰花心被打?', '色老頭', 'k哥語錄01', 'k哥語錄02', 'k哥語錄03', 'k哥語錄04', 'k哥語錄05', 'k哥語錄06', '結弦，在嗎?', '晚餐想吃什麼?', '吃拉麵好了', '真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?', '20噁男名單', '蒼幻語錄01']
+const channelLock = ['結弦help', '樓下支援花心圖', 'Maruze語錄', '天陪語錄', 'k哥語錄', '蒼幻語錄', '是誰花心被打?', '20噁男名單', '色老頭']
 //限制不能於特定頻道使用的指令組
 
 
@@ -61,6 +64,7 @@ client.on('ready', () => {
     console.log(`以 ${client.user.tag}身分登入了!`);
 });//於cmd回傳啟動訊息
 
+//禁止頻道模組
 function forbid(channel)
 {
     if ((channel.name == '蒲團') || (channel.name == 'syaro與史蒂芬妮-多拉') || (channel.name == '股市鬧鐘bot') || (channel.name == 'bugs') || (channel.name == 'exchange-center') || (channel.name == 'countersigned') || (channel.name == 'lobby') || (channel.name == 'hall') || (channel.name == 'har_pt') || (channel.name == 'har_manager') || (channel.name == 'plans-rule-sugguestion') || (channel.name == 'product_center') || (channel.name == 'reports') || (channel.name == 'recieve_instantmessage') || (channel.name == '茶水間')) {
@@ -69,15 +73,26 @@ function forbid(channel)
     else {
         return false;
     }
-}//禁止頻道模組
+}
 //許可使用者模組
-function detect(author)
-{
-    if ((author.id !== '374728300662226945') ) {
+function detect(author) {
+    if ((author.id !== '374728300662226945')) {
     return true;
     }
     else {
         return false;
+    }
+}
+
+function detect(channel) {
+    if ((channel.id !== '354939541087322113')) {
+        console.log(
+            `${msg.author.username}(${msg.author})在hall說了：${msg.content}`
+        );
+        return;
+    }
+    else {
+        return ;
     }
 }
 
@@ -548,7 +563,7 @@ client.on('message', (msg) => {
         default: return
     }
     console.log(
-        `${msg.author}在${msg.channel}說：${msg.content}`
+        `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
     );//使用紀錄
 });
 
