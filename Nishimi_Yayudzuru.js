@@ -88,6 +88,9 @@ let whoTrigger = {};
 
 //指令設定區
 client.on('message', (msg) => {
+    console.log(
+        `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
+    );
     let lit , command;
     lit = msg.content;
     lastUser = msg.author;
@@ -100,7 +103,7 @@ client.on('message', (msg) => {
     command = lit.split(/\s/)[0]
     //找出命令斷點
 
-    if ((msg.channel.id !== '#354939541087322113')) {
+    if ((msg.channel.id !== '354939541087322113')) {
         console.log(
             `${msg.author.username}(${msg.author})在hall說了：${msg.content}`
         );
