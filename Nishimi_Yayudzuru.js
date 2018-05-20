@@ -88,9 +88,6 @@ let whoTrigger = {};
 
 //指令設定區
 client.on('message', (msg) => {
-    console.log(
-        `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
-    );
     let lit , command;
     lit = msg.content;
     lastUser = msg.author;
