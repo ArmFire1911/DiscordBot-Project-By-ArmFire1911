@@ -30,7 +30,7 @@ const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最�
                   '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^', '結弦，在嗎?', '晚餐想吃什麼?'
                   , '吃拉麵好了','真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?']
 //限制使用者使用的指令組
-const channelLock = ['結弦help', '樓下支援花心圖', 'Maruze語錄', '天陪語錄', 'k哥語錄', '蒼幻語錄', '是誰花心被打?', '20噁男名單', '色老頭']
+const channelLock = ['結弦help', '樓下支援花心圖', 'Maruze語錄', 'k哥語錄', '蒼幻語錄', '是誰花心被打?', '20噁男名單', '色老頭']
 //限制不能於特定頻道使用的指令組
 
 
@@ -246,11 +246,9 @@ client.on('message', (msg) => {
                 '我所撰寫的這本書 *ACGN股民語錄集* 乃集ACGN股民眾多幹話、黑歷史於一身之曠世巨作，請選擇你要查看的冊目\n' +
                 '語錄組：'+
                 '```' +
-                '樓下支援花心圖\n' +
+                'Arm語錄\n' +
                 '\n' +
                 'Maruze語錄\n' +
-                '\n'+
-                '天陪語錄\n' +
                 '\n'+
                 'k哥語錄\n' +
                 '\n'+
@@ -258,7 +256,7 @@ client.on('message', (msg) => {
                 '```'+
                 '黑歷史：' +
                 '```' +
-                '是誰花心被打?\n' +
+                '樓下支援花心圖\n' +
                 '\n'+
                 '20噁男名單\n' +
                 '\n' +
@@ -280,7 +278,7 @@ client.on('message', (msg) => {
             )
             console.log(whoTrigger[msg.author].useWhat);
             break;
-        case '天陪語錄':
+        case 'Arm語錄':
             whoTrigger[msg.author] = {
                 theUser: msg.author,
                 useWhat: command,
@@ -288,8 +286,21 @@ client.on('message', (msg) => {
             msg.channel.send(
                 '```' +
                 '請輸入數字：\n' +
-                '01.想當光源氏\n' +
-                '02.東歐蘿莉的幻想' +
+                '01.整個股市都是我的後宮\n' +
+                '02.人體榨汁機' +
+                '```'
+            )
+            console.log(whoTrigger[msg.author].useWhat);
+            break;
+        case '路易斯語錄':
+            whoTrigger[msg.author] = {
+                theUser: msg.author,
+                useWhat: command,
+            };
+            msg.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.加藤鷹的ㄋㄟㄋㄟ讚\n' +
                 '```'
             )
             console.log(whoTrigger[msg.author].useWhat);
@@ -306,8 +317,8 @@ client.on('message', (msg) => {
                 '02.來學校就是為了要...\n'+
                 '03.我覺得禱輝一定有...\n' +
                 '04.我幹過...\n'+
-                '05.自己都不夠吸' +
-                '06.~~幹缺錢啦~~' +
+                '05.自己都不夠吸\n' +
+                '06.幹，缺錢啦' +
                 '```'
             )
             console.log(whoTrigger[msg.author].useWhat);
@@ -326,33 +337,6 @@ client.on('message', (msg) => {
             console.log(whoTrigger[msg.author].useWhat);
             break;
 
-        case '樓下支援阿尼花心圖':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '花心是不好的喔，阿尼^^ :knife::chicken:',
-                pictureURL: 'https://i.imgur.com/dwmVnuX.png'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
-        case '樓下支援阿姆咪花心圖':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
-                pictureURL: 'https://i.imgur.com/Vx06cOp.jpg'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
-        case '是誰花心被打?':
-            embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '是阿尼~~~',
-                pictureURL: 'https://i.imgur.com/606lQCP.png'
-            };
-            msg.channel.send(createEmbed(embedData))
-            break;
         case '20噁男名單':
             msg.channel.send(
                 '```' +
@@ -408,12 +392,12 @@ client.on('message', (msg) => {
                         };
                         msg.channel.send(createEmbed(embedData))
                         break;
-                    case '天陪語錄':
+                    case 'Arm語錄':
                         embedData = {
                             avatarURL: 'https://i.imgur.com/vljAZT4.png',
                             embedTitle: '[來自最可愛的結弦的訊息]',
-                            embedContent: '天培，雞鴨!',
-                            pictureURL: 'https://i.imgur.com/ZET0uZx.jpg'
+                            embedContent: '^^:knife::chicken:',
+                            pictureURL: 'https://i.imgur.com/iJe1yjY.jpg'
                         };
                         msg.channel.send(createEmbed(embedData))
                         break;
@@ -435,6 +419,24 @@ client.on('message', (msg) => {
                         };
                         msg.channel.send(createEmbed(embedData))
                         break;
+                    case '樓下支援花心圖':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '花心阿尼4ni',
+                            pictureURL: 'https://i.imgur.com/dwmVnuX.png'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                    case '路易斯語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '口味真重...',
+                            pictureURL: 'https://i.imgur.com/yYXxCNR.jpg'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
                 };
                 delete (whoTrigger[msg.author]);
                 break;
@@ -445,21 +447,30 @@ client.on('message', (msg) => {
             }
             else {
                 switch (whoTrigger[msg.author].useWhat) {
-                    case '天陪語錄':
-                        embedData = {
-                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                            embedTitle: '[來自最可愛的結弦的訊息]',
-                            embedContent: '天培，雞鴨!',
-                            pictureURL: 'https://i.imgur.com/GQsgoD3.png'
-                        };
-                        msg.channel.send(createEmbed(embedData))
-                        break;
                     case 'k哥語錄':
                         embedData = {
                             avatarURL: 'https://i.imgur.com/vljAZT4.png',
                             embedTitle: '[來自最可愛的結弦的訊息]',
                             embedContent: '呷kㄝ肖年家~係禱灰~~~',
                             pictureURL: 'https://i.imgur.com/Wt3ggTS.jpg'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                    case '樓下支援花心圖':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '花心被打的阿尼:look_up:',
+                            pictureURL: 'https://i.imgur.com/606lQCP.png'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                    case 'Arm語錄':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: ':look_up:',
+                            pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
                         };
                         msg.channel.send(createEmbed(embedData))
                         break;
@@ -479,6 +490,15 @@ client.on('message', (msg) => {
                             embedTitle: '[來自最可愛的結弦的訊息]',
                             embedContent: '呷kㄝ肖年家~係禱灰~~~',
                             pictureURL: 'https://i.imgur.com/sjtUBP8.png'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                    case '樓下支援花心圖':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
+                            pictureURL: 'https://i.imgur.com/Vx06cOp.jpg'
                         };
                         msg.channel.send(createEmbed(embedData))
                         break;
