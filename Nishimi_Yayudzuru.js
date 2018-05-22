@@ -336,11 +336,27 @@ client.on('message', (msg) => {
             )
             console.log(whoTrigger[msg.author].useWhat);
             break;
+        case '樓下支援花心圖':
+            whoTrigger[msg.author] = {
+                theUser: msg.author,
+                useWhat: command,
+            };
+            msg.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.花心尼\n' +
+                '02.花心被打的阿尼\n' +
+                '03.花心阿姆咪\n' +
+                '04.阿姆咪的花心比較級' +
+                '```'
+            )
+            console.log(whoTrigger[msg.author].useWhat);
+            break;
 
         case '20噁男名單':
             msg.channel.send(
                 '```' +
-                '你要的名單 【創立成功】\n' +
+                '你要的名單\n【創立成功】\n' +
                 'lotus.20129@gmail.com \n' +
                 'exejtyu3@gmail.com \n' +
                 'darkfrozex@gmail.com \n' +
