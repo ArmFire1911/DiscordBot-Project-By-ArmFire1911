@@ -100,7 +100,7 @@ client.on('message', (msg) => {
     lit = msg.content;
     lastUser = msg.author;
 
-    timerCleanWhoTrigger = function () {
+    timerCleanWhoTriggerMod = function () {
         delete whoTrigger[msg.author];
         msg.channel.send('不說話就不要吵我!')
         return;
