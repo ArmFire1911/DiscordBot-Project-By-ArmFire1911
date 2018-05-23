@@ -103,7 +103,7 @@ client.on('message', (msg) => {
         timerCleanWhoTriggerMod = setTimeout(
             function () {
                 delete whoTrigger[msg.author];
-                msg.channel.reply('不說話就不要吵我!')
+                msg.reply('不說話就不要吵我!')
                 return;
             }
             , 5000
