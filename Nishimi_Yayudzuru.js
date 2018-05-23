@@ -35,7 +35,9 @@ const channelLock = ['結弦help', '樓下支援花心圖', 'Maruze語錄', 'k�
 //使用者記錄模組
 let whoTrigger = {};
 //清空使用紀錄模組
-let timerCleanWhoTrigger = setTimeout(timerCleanWhoTriggerMod, 5000);
+let timerCleanWhoTriggerMod = {};
+
+
 //內嵌式訊息模組
 function createEmbed(data) {
     embed = new Discord.RichEmbed()
@@ -97,12 +99,20 @@ client.on('message', (msg) => {
     lit = msg.content;
     lastUser = msg.author;
 
-    let timerCleanWhoTriggerMod = function () {
-        delete whoTrigger[msg.author];
-        msg.channel.send('不說話就不要吵我!')
-        return;
-    };
-
+    function timerCleanWhoTrigger() {
+        timerCleanWhoTriggerMod = setTimeout(
+            function () {
+                delete whoTrigger[msg.author];
+                msg.channel.send('不說話就不要吵我!')
+                return;
+            }
+            , 5000
+        );
+    }
+    function timerCleanWhoTriggerStop() {
+        clearTimeout(timerCleanWhoTriggerMod);
+    } 
+    
     //在讀取時忽略%
     if (lit.substring(0, 1) == '%') {
         lit = lit.split('%')[1];
@@ -259,7 +269,7 @@ client.on('message', (msg) => {
                 '01.練肌肌\n' +
                 '```'
             )
-            timerCleanWhoTrigger;
+            timerCleanWhoTrigger();
             break;
 
         case 'Arm語錄':
@@ -274,7 +284,7 @@ client.on('message', (msg) => {
                 '02.人體榨汁機' +
                 '```'
             )
-            timerCleanWhoTrigger;
+            timerCleanWhoTrigger();
             break;
 
         case '路易斯語錄':
@@ -288,7 +298,7 @@ client.on('message', (msg) => {
                 '01.加藤鷹的ㄋㄟㄋㄟ讚\n' +
                 '```'
             )
-            timerCleanWhoTrigger;
+            timerCleanWhoTrigger();
             break;
 
         case 'papa語錄':
@@ -303,7 +313,7 @@ client.on('message', (msg) => {
                 '02.只要是貓我都能%' +
                 '```'
             )
-            timerCleanWhoTrigger;
+            timerCleanWhoTrigger();
             break;
 
         case 'k哥語錄':
@@ -322,7 +332,7 @@ client.on('message', (msg) => {
                 '06.幹，缺錢啦' +
                 '```'
             )
-            timerCleanWhoTrigger;
+            timerCleanWhoTrigger();
             break;
 
         case '蒼幻語錄':
@@ -336,7 +346,7 @@ client.on('message', (msg) => {
                 '01.警察叔叔，就是這個警察!' +
                 '```'
             )
-            timerCleanWhoTrigger;
+            timerCleanWhoTrigger();
             break;
 
         case '樓下支援花心圖':
@@ -353,7 +363,7 @@ client.on('message', (msg) => {
                 '04.阿姆咪的花心比較級' +
                 '```'
             )
-            timerCleanWhoTrigger;
+            timerCleanWhoTrigger();
             break;
 
         case '20噁男名單':
@@ -402,7 +412,7 @@ client.on('message', (msg) => {
                 return;
             }
             else {
-                clearTimeout(timerCleanWhoTrigger);
+                timerCleanWhoTriggerStop();
                 switch (whoTrigger[msg.author].useWhat) {
                     case 'Maruze':
                         embedData = {
@@ -467,7 +477,7 @@ client.on('message', (msg) => {
                 return;
             }
             else {
-                clearTimeout(timerCleanWhoTrigger);
+                timerCleanWhoTriggerStop();
                 switch (whoTrigger[msg.author].useWhat) {
                     case 'k哥語錄':
                         embedData = {
@@ -505,7 +515,7 @@ client.on('message', (msg) => {
                 return;
             }
             else {
-                clearTimeout(timerCleanWhoTrigger);
+                timerCleanWhoTriggerStop();
                 switch (whoTrigger[msg.author].useWhat) {
                     case 'k哥語錄':
                         embedData = {
@@ -534,7 +544,7 @@ client.on('message', (msg) => {
                 return;
             }
             else {
-                clearTimeout(timerCleanWhoTrigger);
+                timerCleanWhoTriggerStop();
                 switch (whoTrigger[msg.author].useWhat) {
                     case 'k哥語錄':
                         embedData = {
@@ -563,7 +573,7 @@ client.on('message', (msg) => {
                 return;
             }
             else {
-                clearTimeout(timerCleanWhoTrigger);
+                timerCleanWhoTriggerStop();
                 switch (whoTrigger[msg.author].useWhat) {
                     case 'k哥語錄':
                         embedData = {
@@ -583,7 +593,7 @@ client.on('message', (msg) => {
                 return;
             }
             else {
-                clearTimeout(timerCleanWhoTrigger);
+                timerCleanWhoTriggerStop();
                 switch (whoTrigger[msg.author].useWhat) {
                     case '天陪語錄':
                         embedData = {
