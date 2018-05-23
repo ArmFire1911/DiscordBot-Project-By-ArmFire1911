@@ -338,7 +338,7 @@ client.on('message', (msg) => {
                 '01.警察叔叔，就是這個警察!' +
                 '```'
             )
-            timerCleanWhoTrigger;
+            timerCleanWhoTrigger
             break;
 
         case '樓下支援花心圖':
