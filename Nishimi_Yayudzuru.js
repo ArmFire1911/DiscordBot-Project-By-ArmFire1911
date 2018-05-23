@@ -26,18 +26,17 @@ const makeItAlive = function () {
 setInterval(makeItAlive, 600000);
 //避免結弦關掉的模組，感謝「sup初音姐姐」提供幫助
 
-//清空使用紀錄模組
-const timerCleanWhoTriggerMod = {};
-const timerCleanWhoTrigger = setTimeout(timerCleanWhoTriggerMod, 5000);
-
 //限制使用者使用的指令組
 const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢',
                   '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^']
 //限制不能於特定頻道使用的指令組
 const channelLock = ['結弦help', '樓下支援花心圖', 'Maruze語錄', 'k哥語錄', '蒼幻語錄', '是誰花心被打?', '20噁男名單', '色老頭']
+
 //使用者記錄模組
 let whoTrigger = {};
-let timerKey = setTimeout(function () { timerCleanWhoTrigger }, 5000);
+//清空使用紀錄模組
+let timerCleanWhoTriggerMod = ;
+let timerCleanWhoTrigger = setTimeout(timerCleanWhoTriggerMod, 5000);
 
 //內嵌式訊息模組
 function createEmbed(data) {
