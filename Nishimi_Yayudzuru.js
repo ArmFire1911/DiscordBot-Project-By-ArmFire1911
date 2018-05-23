@@ -70,7 +70,7 @@ client.on('ready', () => {
 });
 
 //禁止頻道模組
-function forbid(channel)
+functio forbid(channel)
 {
     if ((channel.name === '蒲團') || (channel.name === 'syaro與史蒂芬妮-多拉') || (channel.name === '股市鬧鐘bot') || (channel.name === 'bugs')
         || (channel.name === 'exchange-center') || (channel.name === 'countersigned') || (channel.name === 'lobby') || (channel.name === 'hall')
@@ -338,7 +338,7 @@ client.on('message', (msg) => {
                 '01.警察叔叔，就是這個警察!' +
                 '```'
             )
-            timerCleanWhoTrigger
+            timerCleanWhoTrigger;
             break;
 
         case '樓下支援花心圖':
