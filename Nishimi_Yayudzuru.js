@@ -25,12 +25,9 @@ const makeItAlive = function () {
 };
 setInterval(makeItAlive, 600000);
 //避免結弦關掉的模組，感謝「sup初音姐姐」提供幫助
-//清空使用紀錄
-const timerCleanWhoTriggerMod = function () {
-    delete whoTrigger[msg.author];
-    msg.channel.send('不說話就不要吵我!')
-    return;
-};
+
+//清空使用紀錄模組
+const timerCleanWhoTriggerMod = {};
 const timerCleanWhoTrigger = setTimeout(timerCleanWhoTriggerMod, 5000);
 
 //限制使用者使用的指令組
@@ -103,7 +100,12 @@ client.on('message', (msg) => {
     lit = msg.content;
     lastUser = msg.author;
 
-    
+    timerCleanWhoTrigger = function () {
+        delete whoTrigger[msg.author];
+        msg.channel.send('不說話就不要吵我!')
+        return;
+    };
+
     //在讀取時忽略%
     if (lit.substring(0, 1) == '%') {
         lit = lit.split('%')[1];
