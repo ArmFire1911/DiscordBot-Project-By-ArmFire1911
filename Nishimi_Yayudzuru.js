@@ -35,8 +35,7 @@ const channelLock = ['結弦help', '樓下支援花心圖', 'Maruze語錄', 'k�
 //使用者記錄模組
 let whoTrigger = {};
 //清空使用紀錄模組
-let timerCleanWhoTrigger = {};
-
+let timerCleanWhoTrigger = setTimeout(timerCleanWhoTriggerMod, 5000);
 //內嵌式訊息模組
 function createEmbed(data) {
     embed = new Discord.RichEmbed()
@@ -70,7 +69,7 @@ client.on('ready', () => {
 });
 
 //禁止頻道模組
-functio forbid(channel)
+function forbid(channel)
 {
     if ((channel.name === '蒲團') || (channel.name === 'syaro與史蒂芬妮-多拉') || (channel.name === '股市鬧鐘bot') || (channel.name === 'bugs')
         || (channel.name === 'exchange-center') || (channel.name === 'countersigned') || (channel.name === 'lobby') || (channel.name === 'hall')
@@ -103,7 +102,6 @@ client.on('message', (msg) => {
         msg.channel.send('不說話就不要吵我!')
         return;
     };
-    timerCleanWhoTrigger = setTimeout(timerCleanWhoTriggerMod, 5000);
 
     //在讀取時忽略%
     if (lit.substring(0, 1) == '%') {
@@ -111,7 +109,7 @@ client.on('message', (msg) => {
     }
 
     //找出命令斷點
-    command = lit.split(/\s/)[0]
+    command = lit.split(/\s/)[0];
 
     if ((msg.channel.id === '354939541087322113')) {
         console.log(
