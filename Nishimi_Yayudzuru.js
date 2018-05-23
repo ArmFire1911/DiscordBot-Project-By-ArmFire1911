@@ -35,7 +35,7 @@ const channelLock = ['結弦help', '樓下支援花心圖', 'Maruze語錄', 'k�
 //使用者記錄模組
 let whoTrigger = {};
 //清空使用紀錄模組
-let timerCleanWhoTriggerMod = ;
+let timerCleanWhoTriggerMod = {};
 let timerCleanWhoTrigger = setTimeout(timerCleanWhoTriggerMod, 5000);
 
 //內嵌式訊息模組
