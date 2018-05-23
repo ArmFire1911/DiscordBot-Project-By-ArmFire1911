@@ -25,15 +25,24 @@ const makeItAlive = function () {
 };
 setInterval(makeItAlive, 600000);
 //避免結弦關掉的模組，感謝「sup初音姐姐」提供幫助
+//清空使用紀錄
+const timerCleanWhoTriggerMod = function () {
+    delete whoTrigger[msg.author];
+    msg.channel.send('不說話就不要吵我!')
+    return;
+};
+const timerCleanWhoTrigger = setTimeout(timerCleanWhoTriggerMod, 5000);
 
-const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢',
-                  '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^', '結弦，在嗎?', '晚餐想吃什麼?'
-                  , '吃拉麵好了','真好吃呢ˊˇˋ', '這倒是沒有過', '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?']
 //限制使用者使用的指令組
-const channelLock = ['結弦help', '樓下支援花心圖', 'Maruze語錄', 'k哥語錄', '蒼幻語錄', '是誰花心被打?', '20噁男名單', '色老頭']
+const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢',
+                  '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^']
 //限制不能於特定頻道使用的指令組
+const channelLock = ['結弦help', '樓下支援花心圖', 'Maruze語錄', 'k哥語錄', '蒼幻語錄', '是誰花心被打?', '20噁男名單', '色老頭']
+//使用者記錄模組
+let whoTrigger = {};
+let timerKey = setTimeout(function () { timerCleanWhoTrigger }, 5000);
 
-
+//內嵌式訊息模組
 function createEmbed(data) {
     embed = new Discord.RichEmbed()
         .setTitle('西宮結弦')
@@ -45,29 +54,33 @@ function createEmbed(data) {
         .setTimestamp();
     return embed;
 }
-//內嵌式訊息模組
-const AvatarURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
-//大頭貼網址變數
-const PictureURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
-//照片網址變數
-const EmbedTitle = ' ';
-//內嵌對話框標題
-const EmbedContent = ' ';
-//內嵌對話框內文
 
+//大頭貼網址變數
+const AvatarURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
+//照片網址變數
+const PictureURL = '/http[s]?:\/\/.+\.((jpeg)|(jpg)|(png)|(gif)|(bmp))/';
+//內嵌對話框標題
+const EmbedTitle = ' ';
+//內嵌對話框內文
+const EmbedContent = ' ';
+
+//於cmd回傳啟動訊息
 client.on("ready", () => {
-    console.log(`結弦回家囉!接觸了 ${client.users.size} 位成員，看到了 ${client.channels.size} 個頻道，加入了 ${client.guilds.size} 個伺服器`);
     //用於統計使用者
+    console.log(`結弦回家囉!接觸了 ${client.users.size} 位成員，看到了 ${client.channels.size} 個頻道，加入了 ${client.guilds.size} 個伺服器`);
     client.user.setActivity(`陪ArmFire1911聊天`);
 });
 client.on('ready', () => {
     console.log(`以 ${client.user.tag}身分登入了!`);
-});//於cmd回傳啟動訊息
+});
 
 //禁止頻道模組
 function forbid(channel)
 {
-    if ((channel.name == '蒲團') || (channel.name == 'syaro與史蒂芬妮-多拉') || (channel.name == '股市鬧鐘bot') || (channel.name == 'bugs') || (channel.name == 'exchange-center') || (channel.name == 'countersigned') || (channel.name == 'lobby') || (channel.name == 'hall') || (channel.name == 'har_pt') || (channel.name == 'har_manager') || (channel.name == 'plans-rule-sugguestion') || (channel.name == 'product_center') || (channel.name == 'reports') || (channel.name == 'recieve_instantmessage') || (channel.name == '茶水間')) {
+    if ((channel.name === '蒲團') || (channel.name === 'syaro與史蒂芬妮-多拉') || (channel.name === '股市鬧鐘bot') || (channel.name === 'bugs')
+        || (channel.name === 'exchange-center') || (channel.name === 'countersigned') || (channel.name === 'lobby') || (channel.name === 'hall')
+        || (channel.name === 'har_pt') || (channel.name === 'har_manager') || (channel.name === 'plans-rule-sugguestion') || (channel.name === 'product_center')
+        || (channel.name === 'reports') || (channel.name === 'recieve_instantmessage') || (channel.name === '茶水間')) {
         return true;
     }
     else {
@@ -84,74 +97,45 @@ function detect(author) {
     }
 }
 
-let whoTrigger = {};
-
 //指令設定區
 client.on('message', (msg) => {
     let lit , command;
     lit = msg.content;
     lastUser = msg.author;
 
+    
+    //在讀取時忽略%
     if (lit.substring(0, 1) == '%') {
         lit = lit.split('%')[1];
     }
-    //在讀取時忽略%
-    
-    command = lit.split(/\s/)[0]
-    //找出命令斷點
 
-    if ((msg.channel.id == '354939541087322113')) {
+    //找出命令斷點
+    command = lit.split(/\s/)[0]
+
+    if ((msg.channel.id === '354939541087322113')) {
         console.log(
             `${msg.author.username}(${msg.author})在hall說了：${msg.content}`
         );
     }
 
+    //使用者限制載入
     if (userLock.includes(command)) {
         if (detect(msg.author)) {
             return;
         }
     }
-    //使用者限制載入
 
+    //頻道限制模組載入
     if (channelLock.includes(command)) {
         if (forbid(msg.channel)) {
             return;
         }
     }
-    //頻道限制模組載入
+
 
     //命令設定
     switch (command) {
         //老婆模組
-        case '結弦，在嗎?':
-            msg.channel.send('在阿，怎麼了?')
-            break;
-
-        case '晚餐想吃什麼?':
-            msg.channel.send('嗯...拉麵或咖哩，選一個?')
-            break;
-
-        case '吃拉麵好了':
-            msg.channel.send('那我今天煮醬油叉燒，肉放4片喔!')
-            break;
-
-        case '真好吃呢ˊˇˋ':
-            msg.channel.send('我煮的有難吃過嗎ˋˇˊ')
-            break;
-
-        case '這倒是沒有過':
-            msg.channel.send('愛你:heart:')
-            break;
-
-        case '我回來了':
-            msg.channel.send('你回來啦?東西放著先去洗澡吧，很累了吧?')
-            break;
-
-        case '妳覺得，孩子出生後，我們的未來會是什麼樣子呢?':
-            msg.channel.send('大概，是像這樣子吧?孩子的爸')
-            msg.channel.send(createEmbed('', '', '', 'https://i.imgur.com/vljAZT4.png'))
-            break;
-
         //傲嬌集
         case '結弦可愛':
             embedData = {
@@ -244,20 +228,20 @@ client.on('message', (msg) => {
         case '結弦help':
             msg.channel.send(
                 '我所撰寫的這本書 *ACGN股民語錄集* 乃集ACGN股民眾多幹話、黑歷史於一身之曠世巨作，請選擇你要查看的冊目\n' +
-                '語錄組：'+
+                '語錄組：' +
                 '```' +
                 'Arm語錄\n' +
                 '\n' +
                 'Maruze語錄\n' +
-                '\n'+
+                '\n' +
                 'k哥語錄\n' +
-                '\n'+
+                '\n' +
                 '蒼幻語錄' +
-                '```'+
+                '```' +
                 '黑歷史：' +
                 '```' +
                 '樓下支援花心圖\n' +
-                '\n'+
+                '\n' +
                 '20噁男名單\n' +
                 '\n' +
                 '色老頭\n' +
@@ -276,8 +260,9 @@ client.on('message', (msg) => {
                 '01.練肌肌\n' +
                 '```'
             )
-            console.log(whoTrigger[msg.author].useWhat);
+            timerCleanWhoTrigger;
             break;
+
         case 'Arm語錄':
             whoTrigger[msg.author] = {
                 theUser: msg.author,
@@ -290,8 +275,9 @@ client.on('message', (msg) => {
                 '02.人體榨汁機' +
                 '```'
             )
-            console.log(whoTrigger[msg.author].useWhat);
+            timerCleanWhoTrigger;
             break;
+
         case '路易斯語錄':
             whoTrigger[msg.author] = {
                 theUser: msg.author,
@@ -303,8 +289,24 @@ client.on('message', (msg) => {
                 '01.加藤鷹的ㄋㄟㄋㄟ讚\n' +
                 '```'
             )
-            console.log(whoTrigger[msg.author].useWhat);
+            timerCleanWhoTrigger;
             break;
+
+        case 'papa語錄':
+            whoTrigger[msg.author] = {
+                theUser: msg.author,
+                useWhat: command,
+            };
+            msg.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.性別不同怎麼談戀愛\n' +
+                '02.只要是貓我都能%' +
+                '```'
+            )
+            timerCleanWhoTrigger;
+            break;
+
         case 'k哥語錄':
             whoTrigger[msg.author] = {
                 theUser: msg.author,
@@ -321,8 +323,9 @@ client.on('message', (msg) => {
                 '06.幹，缺錢啦' +
                 '```'
             )
-            console.log(whoTrigger[msg.author].useWhat);
+            timerCleanWhoTrigger;
             break;
+
         case '蒼幻語錄':
             whoTrigger[msg.author] = {
                 theUser: msg.author,
@@ -334,8 +337,9 @@ client.on('message', (msg) => {
                 '01.警察叔叔，就是這個警察!' +
                 '```'
             )
-            console.log(whoTrigger[msg.author].useWhat);
+            timerCleanWhoTrigger;
             break;
+
         case '樓下支援花心圖':
             whoTrigger[msg.author] = {
                 theUser: msg.author,
@@ -350,7 +354,7 @@ client.on('message', (msg) => {
                 '04.阿姆咪的花心比較級' +
                 '```'
             )
-            console.log(whoTrigger[msg.author].useWhat);
+            timerCleanWhoTrigger;
             break;
 
         case '20噁男名單':
@@ -386,6 +390,7 @@ client.on('message', (msg) => {
                 .setImage('https://i.imgur.com/evZLWQY.jpg')
             msg.channel.send(embed)
             break;
+
         case '色老頭':
             embed = new Discord.RichEmbed()
                 .setColor(16750026)
@@ -394,10 +399,11 @@ client.on('message', (msg) => {
             break;
 
         case '01':
-            if (whoTrigger[msg.author] == undefined) {
+            if (whoTrigger[msg.author] === undefined) {
                 return;
             }
             else {
+                clearTimeout(timerCleanWhoTrigger);
                 switch (whoTrigger[msg.author].useWhat) {
                     case 'Maruze':
                         embedData = {
@@ -462,6 +468,7 @@ client.on('message', (msg) => {
                 return;
             }
             else {
+                clearTimeout(timerCleanWhoTrigger);
                 switch (whoTrigger[msg.author].useWhat) {
                     case 'k哥語錄':
                         embedData = {
@@ -499,6 +506,7 @@ client.on('message', (msg) => {
                 return;
             }
             else {
+                clearTimeout(timerCleanWhoTrigger);
                 switch (whoTrigger[msg.author].useWhat) {
                     case 'k哥語錄':
                         embedData = {
@@ -527,6 +535,7 @@ client.on('message', (msg) => {
                 return;
             }
             else {
+                clearTimeout(timerCleanWhoTrigger);
                 switch (whoTrigger[msg.author].useWhat) {
                     case 'k哥語錄':
                         embedData = {
@@ -534,6 +543,15 @@ client.on('message', (msg) => {
                             embedTitle: '[來自最可愛的結弦的訊息]',
                             embedContent: '呷kㄝ肖年家~係禱灰~~~',
                             pictureURL: 'https://i.imgur.com/36VtpKq.png'
+                        };
+                        msg.channel.send(createEmbed(embedData))
+                        break;
+                    case '樓下支援花心圖':
+                        embedData = {
+                            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                            embedTitle: '[來自最可愛的結弦的訊息]',
+                            embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
+                            pictureURL: 'https://i.imgur.com/UYtMBUq.jpg'
                         };
                         msg.channel.send(createEmbed(embedData))
                         break;
@@ -546,6 +564,7 @@ client.on('message', (msg) => {
                 return;
             }
             else {
+                clearTimeout(timerCleanWhoTrigger);
                 switch (whoTrigger[msg.author].useWhat) {
                     case 'k哥語錄':
                         embedData = {
@@ -565,6 +584,7 @@ client.on('message', (msg) => {
                 return;
             }
             else {
+                clearTimeout(timerCleanWhoTrigger);
                 switch (whoTrigger[msg.author].useWhat) {
                     case '天陪語錄':
                         embedData = {
