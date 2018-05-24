@@ -207,7 +207,7 @@ function detect(author) {
 
 //指令設定區
 client.on('message', (msg) => {
-    let lit , command;
+    let lit, command;
     lit = msg.content;
     lastUser = msg.author;
 
@@ -223,8 +223,8 @@ client.on('message', (msg) => {
     }
     function timerCleanWhoTriggerStop() {
         clearTimeout(timerCleanWhoTriggerMod);
-    } 
-    
+    }
+
     //在讀取時忽略%
     if (lit.substring(0, 1) == '%') {
         lit = lit.split('%')[1];
@@ -532,6 +532,6 @@ client.on('message', (msg) => {
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
     );//使用紀錄
-}
+};
 
 client.login(process.env['token']);
