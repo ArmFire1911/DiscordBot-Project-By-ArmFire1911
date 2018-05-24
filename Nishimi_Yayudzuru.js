@@ -528,7 +528,6 @@ client.on('message', (msg) => {
         embedData = embedDataBase[whoTrigger[msg.author].firstUse][command];
         msg.channel.send(createEmbed(embedData));
         delete (whoTrigger[msg.author]);
-        break;
     }
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
