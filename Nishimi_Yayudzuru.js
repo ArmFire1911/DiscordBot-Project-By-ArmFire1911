@@ -254,7 +254,7 @@ client.on('message', (msg) => {
     }
 
     //命令設定
-    if (whoTrigger[msg.author].firstUse === undefined) {
+    if (whoTrigger[msg.author] === undefined) {
         //第一階問答
         switch (command) {
             //老婆模組
@@ -520,7 +520,7 @@ client.on('message', (msg) => {
                 msg.channel.send(embed)
                 break;
             default: return
-        }
+        };
     }
     else {
         timerCleanWhoTriggerStop();
@@ -528,7 +528,7 @@ client.on('message', (msg) => {
         embedData = embedDataBase[whoTrigger[msg.author].firstUse][command];
         msg.channel.send(createEmbed(embedData));
         delete (whoTrigger[msg.author]);
-    }
+    };
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
     );//使用紀錄
