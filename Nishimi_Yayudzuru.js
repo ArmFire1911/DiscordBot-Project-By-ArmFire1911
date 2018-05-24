@@ -532,6 +532,6 @@ client.on('message', (msg) => {
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
     );//使用紀錄
-};
+});
 
 client.login(process.env['token']);
