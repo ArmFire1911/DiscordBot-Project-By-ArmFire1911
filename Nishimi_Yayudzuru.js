@@ -526,7 +526,7 @@ client.on('message', (msg) => {
         timerCleanWhoTriggerStop();
         whoTrigger[msg.author].secondUse = command;
         embedData = embedDataBase[whoTrigger[msg.author].firstUse][command];
-        msg.channel.send(embedData ? embedData : '沒有這個選項啦!');
+        msg.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
         delete (whoTrigger[msg.author]);
     }
     console.log(
