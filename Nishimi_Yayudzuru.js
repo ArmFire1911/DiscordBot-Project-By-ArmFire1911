@@ -376,28 +376,11 @@ client.on('message', (msg) => {
             //老婆模組
             //傲嬌集
             case '結弦可愛':
-                msg.channel.send(createEmbed(messageData[command][command]))
-                break;
             case '這...這是給我的便當嗎?':
-                msg.channel.send(createEmbed(messageData[command][command]))
-                break;
             case '結弦最喜歡我了，對吧!':
-                msg.channel.send(createEmbed(messageData[command][command]))
-                break;
-            //病嬌模式
             case '那個女孩很可愛呢':
-                msg.channel.send(createEmbed(messageData[command][command]))
-                break;
-            //新婚三問
             case '我回來了!':
-                msg.channel.send(createEmbed(messageData[command][command]))
-                break;
-            //拍照
-            //正常拍照
             case '結弦，拍照~':
-                msg.channel.send(createEmbed(messageData[command][command]))
-                break;
-            //糟糕拍照
             case '結弦，拍照^^':
                 msg.channel.send(createEmbed(messageData[command][command]))
                 break;
@@ -408,60 +391,12 @@ client.on('message', (msg) => {
                 msg.channel.send(messageData[command])
                 break;
 
-            case 'Maruze語錄':
-                whoTrigger[msg.author] = {
-                    theUser: msg.author,
-                    firstUse: command,
-                };
-                msg.channel.send(messageData[command][command])
-                timerCleanWhoTrigger();
-                break;
-
             case 'Arm語錄':
-                whoTrigger[msg.author] = {
-                    theUser: msg.author,
-                    firstUse: command,
-                };
-                msg.channel.send(messageData[command][command])
-                timerCleanWhoTrigger();
-                break;
-
+            case 'Maruze語錄':
             case '路易斯語錄':
-                whoTrigger[msg.author] = {
-                    theUser: msg.author,
-                    firstUse: command,
-                };
-                msg.channel.send(messageData[command][command])
-                timerCleanWhoTrigger();
-                break;
-
             case 'papa語錄':
-                whoTrigger[msg.author] = {
-                    theUser: msg.author,
-                    firstUse: command,
-                };
-                msg.channel.send(messageData[command][command])
-                timerCleanWhoTrigger();
-                break;
-
             case 'k哥語錄':
-                whoTrigger[msg.author] = {
-                    theUser: msg.author,
-                    firstUse: command,
-                };
-                msg.channel.send(messageData[command][command])
-                timerCleanWhoTrigger();
-                break;
-
             case '蒼幻語錄':
-                whoTrigger[msg.author] = {
-                    theUser: msg.author,
-                    firstUse: command,
-                };
-                msg.channel.send(messageData[command][command])
-                timerCleanWhoTrigger();
-                break;
-
             case '樓下支援花心圖':
                 whoTrigger[msg.author] = {
                     theUser: msg.author,
