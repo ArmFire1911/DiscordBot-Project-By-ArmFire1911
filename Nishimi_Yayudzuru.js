@@ -43,9 +43,6 @@ const channelLock = ['結弦help', '樓下支援花心圖', 'Maruze語錄', 'k�
 
 //使用者記錄模組
 let whoTrigger = {};
-//清空使用紀錄模組
-let timerCleanWhoTriggerMod = {};
-
 
 //內嵌式訊息模組
 function createEmbed(data) {
@@ -211,18 +208,18 @@ client.on('message', (msg) => {
     lit = msg.content;
     lastUser = msg.author;
 
+    //偵測時間設定
     function timerCleanWhoTrigger() {
-        timerCleanWhoTriggerMod = setTimeout(
+        whoTrigger[msg.author].timer = setTimeout(
             function () {
                 delete whoTrigger[msg.author];
                 msg.reply('不說話就不要吵我!')
-                return;
             }
             , 5000
         );
     }
     function timerCleanWhoTriggerStop() {
-        clearTimeout(timerCleanWhoTriggerMod);
+        clearTimeout(whoTrigger[msg.author].timer);
     }
 
     //在讀取時忽略%
