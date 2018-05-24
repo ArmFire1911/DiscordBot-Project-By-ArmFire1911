@@ -253,7 +253,6 @@ client.on('message', (msg) => {
         }
     }
 
-
     //命令設定
     if (whoTrigger[msg.author].firstUse === undefined) {
         //第一階問答
@@ -520,8 +519,8 @@ client.on('message', (msg) => {
                     .setImage('https://i.imgur.com/yNMYnve.png')
                 msg.channel.send(embed)
                 break;
+            default: return
         }
-        default: return
     }
     else {
         timerCleanWhoTriggerStop();
