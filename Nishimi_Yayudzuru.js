@@ -36,11 +36,9 @@ setInterval(makeItAlive, 600000);
 //避免結弦關掉的模組，感謝「sup初音姐姐」提供幫助
 
 //限制使用者使用的指令組
-const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢',
-    '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^']
+const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^']
 //限制不能於特定頻道使用的指令組
-const channelLock = ['結弦help', 'Arm語錄', 'k哥語錄', '路易斯語錄', 'papa語錄', '蒼幻語錄', '20噁男名單', '色老頭', '樓下支援花心圖']
-const channelLock = ['結弦help', 'Arm語錄', 'k哥語錄', '路易斯語錄', 'papa語錄', '蒼幻語錄', '樓下支援花心圖','其他黑歷史']
+const channelLock = ['結弦help', 'Arm語錄', 'k哥語錄', '路易斯語錄', 'papa語錄', '蒼幻語錄', '樓下支援花心圖', '其他黑歷史']
 
 //使用者記錄模組
 let whoTrigger = {};
@@ -109,7 +107,6 @@ const messageData = {
         embedContent: '不...不行!絕對不行!!!!',
         pictureURL: 'https://i.imgur.com/kKxUFRr.jpg'
     },
-
     '結弦help':
         '我所撰寫的這本書 *ACGN股民語錄集* 乃集ACGN股民眾多幹話、黑歷史於一身之曠世巨作，請選擇你要查看的冊目\n' +
         '語錄組：' +
@@ -297,6 +294,15 @@ const messageData = {
         },
     },
     '其他黑歷史': {
+        '其他黑歷史':
+            '```' +
+            '請輸入數字：\n' +
+            '01.20噁男名單\n' +
+            '02.色老頭' +
+            '```',
+        '01': {
+            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+            embedTitle: '[來自最可愛的結弦的訊息]',
             embedContent: '20噁男嘔嘔嘔嘔偶',
             pictureURL: 'https://i.imgur.com/evZLWQY.jpg'
         },
@@ -304,6 +310,9 @@ const messageData = {
             avatarURL: 'https://i.imgur.com/vljAZT4.png',
             embedTitle: '[來自最可愛的結弦的訊息]',
             embedContent: '蘿莉控色老頭，死刑!',
+            pictureURL: 'https://i.imgur.com/yNMYnve.png'
+        }
+    }
 }
 
 //禁止頻道模組
@@ -377,34 +386,6 @@ client.on('message', (msg) => {
     }
 
     //命令設定
-    if (whoTrigger[msg.author] === undefined) {
-        //第一階問答
-        switch (command) {
-            //老婆模組
-            //傲嬌集
-            case '結弦可愛':
-            case '這...這是給我的便當嗎?':
-            case '結弦最喜歡我了，對吧!':
-            case '那個女孩很可愛呢':
-            case '我回來了!':
-            case '結弦，拍照~':
-            case '結弦，拍照^^':
-                msg.channel.send(createEmbed(messageData[command][command]))
-                break;
-
-            //語錄系列
-            //語錄總綱
-            case '結弦help':
-                msg.channel.send(messageData[command])
-                break;
-
-            case 'Arm語錄':
-            case 'Maruze語錄':
-            case '路易斯語錄':
-            case 'papa語錄':
-            case 'k哥語錄':
-            case '蒼幻語錄':
-            case '樓下支援花心圖':
     if (command === '結弦help') {
         msg.channel.send(messageData[command])
     }
