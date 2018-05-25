@@ -396,7 +396,7 @@ client.on('message', (msg) => {
             theUser: msg.author,
             firstUse: command,
         };
-        msg.channel.send(messageData ? messageData[command][command] : ' ' )
+        msg.channel.send(messageData ? messageData[command][command] : null)
         timerCleanWhoTrigger();
     }
     else {
