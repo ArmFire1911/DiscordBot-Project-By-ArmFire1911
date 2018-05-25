@@ -311,9 +311,9 @@ const messageData = {
             embedTitle: '[來自最可愛的結弦的訊息]',
             embedContent: '蘿莉控色老頭，死刑!',
             pictureURL: 'https://i.imgur.com/yNMYnve.png'
-        }
-    }
-}
+        },
+    },
+};
 
 //禁止頻道模組
 function forbid(channel) {
@@ -384,7 +384,9 @@ client.on('message', (msg) => {
             return;
         }
     }
-
+    console.log(
+        `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
+    );//使用者紀錄
     //命令設定
     if (command === '結弦help') {
         msg.channel.send(messageData[command])
@@ -405,7 +407,7 @@ client.on('message', (msg) => {
         delete (whoTrigger[msg.author]);
     }
     console.log(
-        `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
+        `${msg.author.username}(${msg.author})在${msg.channel}使用的指令成功了!`
     );//使用紀錄
 });
 
