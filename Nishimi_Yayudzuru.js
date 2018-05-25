@@ -40,6 +40,7 @@ const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最�
     '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^']
 //限制不能於特定頻道使用的指令組
 const channelLock = ['結弦help', 'Arm語錄', 'k哥語錄', '路易斯語錄', 'papa語錄', '蒼幻語錄', '20噁男名單', '色老頭', '樓下支援花心圖']
+const channelLock = ['結弦help', 'Arm語錄', 'k哥語錄', '路易斯語錄', 'papa語錄', '蒼幻語錄', '樓下支援花心圖','其他黑歷史']
 
 //使用者記錄模組
 let whoTrigger = {};
@@ -125,9 +126,7 @@ const messageData = {
         '```' +
         '樓下支援花心圖\n' +
         '\n' +
-        '20噁男名單\n' +
-        '\n' +
-        '色老頭\n' +
+        '其他黑歷史\n' +
         '```',
 
     'Arm語錄': {
@@ -297,6 +296,14 @@ const messageData = {
             pictureURL: 'https://i.imgur.com/UYtMBUq.jpg'
         },
     },
+    '其他黑歷史': {
+            embedContent: '20噁男嘔嘔嘔嘔偶',
+            pictureURL: 'https://i.imgur.com/evZLWQY.jpg'
+        },
+        '02': {
+            avatarURL: 'https://i.imgur.com/vljAZT4.png',
+            embedTitle: '[來自最可愛的結弦的訊息]',
+            embedContent: '蘿莉控色老頭，死刑!',
 }
 
 //禁止頻道模組
@@ -398,56 +405,16 @@ client.on('message', (msg) => {
             case 'k哥語錄':
             case '蒼幻語錄':
             case '樓下支援花心圖':
-                whoTrigger[msg.author] = {
-                    theUser: msg.author,
-                    firstUse: command,
-                };
-                msg.channel.send(messageData[command][command])
-                timerCleanWhoTrigger();
-                break;
-
-            case '20噁男名單':
-                msg.channel.send(
-                    '```' +
-                    '你要的名單\n【創立成功】\n' +
-                    'lotus.20129@gmail.com \n' +
-                    'exejtyu3@gmail.com \n' +
-                    'darkfrozex@gmail.com \n' +
-                    'TestPlayerII \n' +
-                    'moebear \n' +
-                    'q0500 \n' +
-                    'hjgeiurysgher@gmail.com \n' +
-                    'gintsuki0203@gmail.com \n' +
-                    'taiwan1998 \n' +
-                    'b06403033 \n' +
-                    '40671127@gm.nfu.edu.tw \n' +
-                    'kanokanocat \n' +
-                    'qqqqqqd45@gmail.com \n' +
-                    'linyosun@gmail.com \n' +
-                    'kk2025 \n' +
-                    'Euphokumiko \n' +
-                    'kujoieyasu \n' +
-                    'b960047125 \n' +
-                    's57836 \n' +
-                    'gamania0515 \n' +
-                    'SmallYue1 \n' +
-                    '等人投資的「琳達 Linda公司創立計劃」成功了，該公司正式上市，初始股價為$8！' +
-                    '```'
-                )
-                embed = new Discord.RichEmbed()
-                    .setColor(16750026)
-                    .setImage('https://i.imgur.com/evZLWQY.jpg')
-                msg.channel.send(embed)
-                break;
-
-            case '色老頭':
-                embed = new Discord.RichEmbed()
-                    .setColor(16750026)
-                    .setImage('https://i.imgur.com/yNMYnve.png')
-                msg.channel.send(embed)
-                break;
-            default: return
+    if (command === '結弦help') {
+        msg.channel.send(messageData[command])
+    }
+    else if (whoTrigger[msg.author] === undefined) {
+        whoTrigger[msg.author] = {
+            theUser: msg.author,
+            firstUse: command,
         };
+        msg.channel.send(messageData[command][command])
+        timerCleanWhoTrigger();
     }
     else {
         timerCleanWhoTriggerStop();
