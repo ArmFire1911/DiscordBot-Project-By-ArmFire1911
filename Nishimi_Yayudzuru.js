@@ -371,7 +371,6 @@ client.on('message', (msg) => {
             return;
         }
     }
-
     //頻道限制模組載入
     if (channelLock.includes(command)) {
         if (forbid(msg.channel)) {
@@ -382,7 +381,7 @@ client.on('message', (msg) => {
         `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
     );//使用者紀錄
 
-    if (command!== messageData[command] || messageData[command][command] ){
+    if (command!== (messageData[command] || messageData[command][command] )){
         return;
     }
     //命令設定
@@ -396,14 +395,18 @@ client.on('message', (msg) => {
                 firstUse: command,
             };
             if (command === messageData[command]) {
-                msg.channel.send(messageData[command][command])
+                if (messageData[command][command] === undefined) {
+
+                }
+                else {
+                    msg.channel.send(messageData[command][command])
+                }
             }
             else {
                 return;
             }
             timerCleanWhoTrigger();
         }
-
         else {
             timerCleanWhoTriggerStop();
             whoTrigger[msg.author].secondUse = command;
