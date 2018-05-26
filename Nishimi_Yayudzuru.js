@@ -335,7 +335,7 @@ function detect(author) {
     else {
         return false;
     }
-}
+};
 
 //指令設定區
 client.on('message', (msg) => {
@@ -351,59 +351,57 @@ client.on('message', (msg) => {
             }
             , 5000
         );
-    }
+    };
     function timerCleanWhoTriggerStop() {
         clearTimeout(whoTrigger[msg.author].timer);
-    }
+    };
 
     //找出命令斷點
     command = lit.split(/\s/)[0];
-
-    if ((msg.channel.id === '354939541087322113')) {
-        console.log(
-            `${msg.author.username}(${msg.author})在hall說了：${msg.content}`
-        );
-    }
 
     //使用者限制載入
     if (userLock.includes(command)) {
         if (detect(msg.author)) {
             return;
         }
-    }
+    };
     //頻道限制模組載入
     if (channelLock.includes(command)) {
         if (forbid(msg.channel)) {
             return;
         }
-    }
+    };
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
     );//使用者紀錄
 
     if (command !== messageData[command] || command !== messageData[command][command] ){
         return;
-    }
+    };
     //命令設定
+    //單獨拉出指令表判斷
     if (command === '結弦help') {
-        msg.channel.send(messageData[command])
+        msg.channel.send(messageData[command]);
     }
     else {
+        //第一階段問答
         if (whoTrigger[msg.author] === undefined) {
-            whoTrigger[msg.author] = {
-                theUser: msg.author,
-                firstUse: command,
-            };
-            if (command === messageData[command]) {
-                if (messageData[command][command] === undefined) {
-                    return;
-                }
-                else {
-                    msg.channel.send(messageData[command][command])
-                }
+            //老婆模組
+            if (command === messageData[command] && messageData[command] === undefined) {
+                msg.channel.send(createEmbed(embedData));
             }
             else {
-                return;
+                //一般第一階段問答
+                whoTrigger[msg.author] = {
+                    theUser: msg.author,
+                    firstUse: command,
+                };
+                if (command === messageData[command] && command === messageData[command][command]) {
+                    msg.channel.send(messageData[command][command]);
+                }
+                else {
+                    return;
+                }
             }
             timerCleanWhoTrigger();
         }
