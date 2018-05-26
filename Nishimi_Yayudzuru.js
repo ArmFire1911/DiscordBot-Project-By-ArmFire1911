@@ -382,7 +382,7 @@ client.on('message', (msg) => {
         `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
     );//使用者紀錄
 
-    if (messageData[command] || messageData[command][command] === undefined) {
+    if (command!== messageData[command] || messageData[command][command] ){
         return;
     }
     //命令設定
