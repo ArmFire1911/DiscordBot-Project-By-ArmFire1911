@@ -396,7 +396,7 @@ client.on('message', (msg) => {
             };
             if (command === messageData[command]) {
                 if (messageData[command][command] === undefined) {
-
+                    return;
                 }
                 else {
                     msg.channel.send(messageData[command][command])
