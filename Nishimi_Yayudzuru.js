@@ -371,13 +371,15 @@ client.on('message', (msg) => {
             return;
         }
     };
-    console.log(
-        `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
-    );//使用者紀錄
 
     if (command !== messageData[command] || command !== messageData[command][command] ){
         return;
     };
+
+    console.log(
+        `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
+    );//使用者紀錄
+
     //命令設定
     //單獨拉出指令表判斷
     if (command === '結弦help') {
