@@ -381,7 +381,7 @@ client.on('message', (msg) => {
         `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
     );//使用者紀錄
 
-    if (command!== (messageData[command] || messageData[command][command] )){
+    if (command !== messageData[command] || command !== messageData[command][command] ){
         return;
     }
     //命令設定
