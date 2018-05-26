@@ -65,6 +65,48 @@ const EmbedTitle = ' ';
 const EmbedContent = ' ';
 //內容
 const messageData = {
+    '結弦可愛': {
+        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+        embedTitle: '[來自最可愛的老婆大人的訊息]',
+        embedContent: '好噁心!不准靠近我四公尺以內! \n不…不過這樣子也有點可憐，不然你屏住呼吸可以再前進一公尺',
+        pictureURL: ''
+    },
+    '這...這是給我的便當嗎?': {
+        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+        embedTitle: '[來自最可愛的老婆大人的訊息]',
+        embedContent: '今天的便當，只是剛好有剩餘的食材才順手做的唷。 \n因為清理很麻煩，所以絕對不准你剩下來，知道了吧！',
+        pictureURL: ''
+    },
+    '結弦最喜歡我了，對吧!': {
+        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+        embedTitle: '[來自最可愛的老婆大人的訊息]',
+        embedContent: '別、別說傻話了……我我我都說沒有了不是嗎！？',
+        pictureURL: ''
+    },
+    '那個女孩很可愛呢': {
+        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+        embedTitle: '[來自最可愛的老婆大人的訊息]',
+        embedContent: '花心是不好的哦...對吧，惠勝 ^^ :knife::chicken:',
+        pictureURL: ''
+    },
+    '我回來了!': {
+        avatarURL: 'https://i.imgur.com/bb10UWY.jpg',
+        embedTitle: '[來自最可愛的老婆大人的訊息]',
+        embedContent: '你要先吃飯? \n還是先洗澡? \n還是先·吃·我?',
+        pictureURL: ''
+    },
+    '結弦，拍照~': {
+        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+        embedTitle: '[來自最可愛的老婆大人的訊息]',
+        embedContent: '如果是你要拍的話...好吧，只有一次喔!',
+        pictureURL: 'https://i.imgur.com/3g8Y8jE.png'
+    },
+    '結弦，拍照^^': {
+        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+        embedTitle: '[來自最可愛的老婆大人的訊息]',
+        embedContent: '不...不行!絕對不行!!!!',
+        pictureURL: 'https://i.imgur.com/kKxUFRr.jpg'
+    },
     '結弦help':
         '我所撰寫的這本書 *ACGN股民語錄集* 乃集ACGN股民眾多幹話、黑歷史於一身之曠世巨作，請選擇你要查看的冊目\n' +
         '語錄組：' +
@@ -299,7 +341,6 @@ function detect(author) {
 client.on('message', (msg) => {
     let lit, command;
     lit = msg.content;
-    lastUser = msg.author;
 
     //偵測時間設定
     function timerCleanWhoTrigger() {
@@ -313,11 +354,6 @@ client.on('message', (msg) => {
     }
     function timerCleanWhoTriggerStop() {
         clearTimeout(whoTrigger[msg.author].timer);
-    }
-
-    //在讀取時忽略%
-    if (lit.substring(0, 1) == '%') {
-        lit = lit.split('%')[1];
     }
 
     //找出命令斷點
@@ -345,29 +381,36 @@ client.on('message', (msg) => {
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
     );//使用者紀錄
+
+    if (messageData[command] || messageData[command][command] === undefined) {
+        return;
+    }
     //命令設定
     if (command === '結弦help') {
         msg.channel.send(messageData[command])
     }
-    else if (whoTrigger[msg.author] === undefined) {
-        whoTrigger[msg.author] = {
-            theUser: msg.author,
-            firstUse: command,
-        };
-        if (command === messageData[command]) {
-            msg.channel.send(messageData[command][command])
-        }
-        else {
-            return;
-        }
-        timerCleanWhoTrigger();
-    }
     else {
-        timerCleanWhoTriggerStop();
-        whoTrigger[msg.author].secondUse = command;
-        embedData = messageData[whoTrigger[msg.author].firstUse][command];
-        msg.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
-        delete (whoTrigger[msg.author]);
+        if (whoTrigger[msg.author] === undefined) {
+            whoTrigger[msg.author] = {
+                theUser: msg.author,
+                firstUse: command,
+            };
+            if (command === messageData[command]) {
+                msg.channel.send(messageData[command][command])
+            }
+            else {
+                return;
+            }
+            timerCleanWhoTrigger();
+        }
+
+        else {
+            timerCleanWhoTriggerStop();
+            whoTrigger[msg.author].secondUse = command;
+            embedData = messageData[whoTrigger[msg.author].firstUse][command];
+            msg.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
+            delete (whoTrigger[msg.author]);
+        }
     }
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}使用的指令成功了!`
