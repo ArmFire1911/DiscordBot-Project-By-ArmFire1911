@@ -372,7 +372,7 @@ client.on('message', (msg) => {
         }
     };
 
-    if (command !== messageData[command] || command !== messageData[command][command] ){
+    if (messageData[command] === undefined || messageData[whoTrigger[msg.author].firstUse][command]) {
         return;
     };
 
@@ -389,7 +389,8 @@ client.on('message', (msg) => {
         //第一階段問答
         if (whoTrigger[msg.author] === undefined) {
             //老婆模組
-            if (command === messageData[command] && messageData[command] === undefined) {
+            if (messageData[command][command] === undefined) {
+                embedData = messageData[command];
                 msg.channel.send(createEmbed(embedData));
             }
             else {
@@ -398,7 +399,7 @@ client.on('message', (msg) => {
                     theUser: msg.author,
                     firstUse: command,
                 };
-                if (command === messageData[command] && command === messageData[command][command]) {
+                if (messageData[command][command] !== undefined) {
                     msg.channel.send(messageData[command][command]);
                 }
                 else {
