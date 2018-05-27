@@ -350,7 +350,7 @@ client.on('message', (msg) => {
         }
     };
 
-    if (messageData[command] === undefined || messageData[command][command] === undefined) {
+    if (messageData[command] === undefined || messageData[whoTrigger[msg.author]][command] === undefined) {
         return;
     }
 
