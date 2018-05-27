@@ -372,7 +372,11 @@ client.on('message', (msg) => {
     };
 
     console.log(commands[command]);
-    
+
+    if (command === '第一') {
+        execute(message);
+    };
+
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}使用的指令成功了!`
     );//使用紀錄
