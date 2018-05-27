@@ -41,8 +41,6 @@ const EmbedTitle = ' ';
 const EmbedContent = ' ';
 //內容
 
-if()
-
 const messageData = {
     //有第一層無第二層
     '結弦可愛': {
