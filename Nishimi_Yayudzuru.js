@@ -350,7 +350,13 @@ client.on('message', (msg) => {
         }
     };
 
-    if (messageData[command] === undefined || messageData[whoTrigger[msg.author]][command] === undefined) {
+    //使用紀錄載入
+    whoTrigger[msg.author] = {
+        theUser: msg.author,
+        firstUse: command,
+    };
+
+    if (messageData[command] === undefined || messageData[whoTrigger[msg.author].firstUse][command] === undefined) {
         return;
     }
 
@@ -358,19 +364,17 @@ client.on('message', (msg) => {
     if (messageData[command] !== undefined && messageData[command][command] === undefined) {
         if (command === '結弦help') {
             msg.channel.send(messageData[command]);
+            delete (whoTrigger[msg.author]);
         }
         else {
             EmbedData = messageData[command];
             msg.channel.send(EmbedData);
+            delete (whoTrigger[msg.author]);
         }
     }
     //第二層
     else {
         if (messageData[command] !== undefined && messageData[command][command] !== undefined) {
-            whoTrigger[msg.author] = {
-                theUser: msg.author,
-                firstUse: command,
-            };
             msg.channel.send(messageData[command][command]);
             timerCleanWhoTrigger();
         }
