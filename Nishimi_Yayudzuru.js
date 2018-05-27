@@ -18,24 +18,6 @@ const channelLock = ['結弦help', 'Arm語錄', 'k哥語錄', '路易斯語錄',
 
 //使用者記錄模組
 let whoTrigger = {};
-//訊息類別模組
-const Command = class {
-    constructor(explanation, selections) {
-        this.explanation = explanation;
-        if (selections !== undefined) this.selections = selections;
-    }
-};
-const EmbedData = class {
-    constructor(~~~~) { ~~~~}
-};
-const miku = {
-    '指令1': Command(EmbedData(~~, ~~, ~~, ~~),
-        {
-            '01': Command(EmbedData(~~, ~~, ~~, ~~)),
-            '02': Command(EmbedData(~~, ~~, ~~, ~~)),
-        }),
-    '指令2': Command(EmbedData(~~, ~~, ~~, ~~)),
-};
 
 //內嵌式訊息模組
 function createEmbed(data) {
