@@ -11,9 +11,9 @@ const forkBot = function (code) {
     });
 }
 //fork
-fork('Nishimi_Yayudzuru');
-fork('G11');
-fork('Reiko');
+forkBot('Nishimi_Yayudzuru');
+forkBot('G11');
+forkBot('Reiko');
 
 //listen port
 const http = require('http');
@@ -26,7 +26,7 @@ const request = require('request');
 const makeItAlive = function () {
     request.get
         (
-        'https://yayudzu-discord-bot.herokuapp.com/',
+        'https://armfire1911s-family.herokuapp.com/',
         {},
         function (error, response, body) {
             console.log(`send a post`);
