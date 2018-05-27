@@ -1,10 +1,10 @@
-//±Ò°Ê¼Ò²Õ
+//å•Ÿå‹•æ¨¡çµ„
 const cp = require('child_process');
 const token = process.env.token;
 const forkBot = function (code) {
-    const token = process.env['token_' + code]; //¨ú±o¦¹botªºtoken
+    const token = process.env['token_' + code]; //å–å¾—æ­¤botçš„token
     const env = { token: token };
-    const bot = cp.fork(`${__dirname}/${code}.js`, { env: env }); //³]©w¦¹botªºÀô¹ÒÅÜ¼Æ
+    const bot = cp.fork(`${__dirname}/${code}.js`, { env: env }); //è¨­å®šæ­¤botçš„ç’°å¢ƒè®Šæ•¸
     bot.on('exit', () => {
         //refork after 10s
         setTimeout(() => { forkBot(code); }, 10000);
@@ -38,4 +38,4 @@ const makeItAlive = function () {
         );
 };
 setInterval(makeItAlive, 600000);
-//¥H¤W¹B§@¼Ò²Õ·PÁÂ¡usupªì­µ©j©j¡v´£¨ÑÀ°§U
+//ä»¥ä¸Šé‹ä½œæ¨¡çµ„æ„Ÿè¬ã€ŒsupåˆéŸ³å§å§ã€æä¾›å¹«åŠ©
