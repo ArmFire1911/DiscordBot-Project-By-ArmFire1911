@@ -1,9 +1,9 @@
 {
-  "name": "Nishimi_Yayudzuru",
+  "name": "ArmFire1911",
   "version": "1.0.0",
-  "description": "NishimiyaYudzuru",
+  "description": "node another bot",
   "scripts": {
-    "start": "node Nishimi_Yayudzuru.js"
+    "start": "node ArmFire1911.js"
   },
   "author": "ArmFire1911",
   "dependencies": {
