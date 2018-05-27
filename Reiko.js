@@ -1,14 +1,14 @@
-//±Ò°Ê¼Ò²Õ
+ï»¿//å•Ÿå‹•æ¨¡çµ„
 const Discord = require('discord.js');
 const client = new Discord.Client({ autoReconnect: true });
-//©ócmd¦^¶Ç±Ò°Ê°T®§
+//æ–¼cmdå›žå‚³å•Ÿå‹•è¨Šæ¯
 client.on("ready", () => {
-    //¥Î©ó²Î­p¨Ï¥ÎªÌ
-    console.log(`Â§¤l¦^®aÅo!±µÄ²¤F ${client.users.size} ¦ì¦¨­û¡A¬Ý¨ì¤F ${client.channels.size} ­ÓÀW¹D¡A¥[¤J¤F ${client.guilds.size} ­Ó¦øªA¾¹`);
-    client.user.setActivity(`³­ArmFire1911²á¤Ñ`);
+    //ç”¨æ–¼çµ±è¨ˆä½¿ç”¨è€…
+    console.log(`ç¦®å­å›žå®¶å›‰!æŽ¥è§¸äº† ${client.users.size} ä½æˆå“¡ï¼Œçœ‹åˆ°äº† ${client.channels.size} å€‹é »é“ï¼ŒåŠ å…¥äº† ${client.guilds.size} å€‹ä¼ºæœå™¨`);
+    client.user.setActivity(`é™ªArmFire1911èŠå¤©`);
 });
 client.on('ready', () => {
-    console.log(`¥H ${client.user.tag}¨­¤Àµn¤J¤F!`);
+    console.log(`ä»¥ ${client.user.tag}èº«åˆ†ç™»å…¥äº†!`);
 });
 
 client.login(process.env['token']);

@@ -315,6 +315,27 @@ function detect(author) {
     }
 };
 
+const commands = {
+    '第一': {
+        execute(message) {
+            console.log('第一', message);
+        },
+        subcommands: {
+            '01': {
+                execute(message) {
+                    console.log('第一', '01', message);
+                },
+                subcommands: {
+                    'A': {
+                        execute(message) {
+                            console.log('第一', '01', 'A', message);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 //指令設定區
 client.on('message', (msg) => {
     let lit, command;
@@ -350,27 +371,7 @@ client.on('message', (msg) => {
         }
     };
 
-    const commands = {
-        '第一': {
-            execute(message) {
-                console.log('第一', message);
-            },
-            subcommands: {
-                '01': {
-                    execute(message) {
-                        console.log('第一', '01', message);
-                    },
-                    subcommands: {
-                        'A': {
-                            execute(message) {
-                                console.log('第一', '01', 'A', message);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+
     
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}使用的指令成功了!`
