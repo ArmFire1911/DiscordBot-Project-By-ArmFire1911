@@ -373,9 +373,12 @@ client.on('message', (msg) => {
 
     console.log(commands[command]);
 
-    if (command === '第一') {
+    if (commands[command] !== undefined) {
         execute(message);
-    };
+    }
+    else {
+        return;
+    }
 
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}使用的指令成功了!`
