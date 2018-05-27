@@ -11,4 +11,26 @@ client.on('ready', () => {
     console.log(`以 ${client.user.tag}身分登入了!`);
 });
 
+const commands = {
+    '第一': {
+        execute(message) {
+            console.log('第一', message);
+        },
+        subcommands: {
+            '01': {
+                execute(message) {
+                    console.log('第一', '01', message);
+                },
+                subcommands: {
+                    'A': {
+                        execute(message) {
+                            console.log('第一', '01', 'A', message);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 client.login(process.env['token']);

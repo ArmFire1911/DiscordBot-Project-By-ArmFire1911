@@ -350,40 +350,25 @@ client.on('message', (msg) => {
         }
     };
 
-    //使用紀錄載入
-    whoTrigger[msg.author] = {
-        theUser: msg.author,
-        firstUse: command,
-    };
-
-    if (messageData[command] === undefined && messageData[whoTrigger[msg.author].firstUse][command] === undefined) {
-        return;
-    }
-
-    //第一層
-    if (messageData[command] !== undefined && messageData[command][command] === undefined) {
-        if (command === '結弦help') {
-            msg.channel.send(messageData[command]);
-            delete (whoTrigger[msg.author]);
-        }
-        else {
-            EmbedData = messageData[command];
-            msg.channel.send(EmbedData);
-            delete (whoTrigger[msg.author]);
-        }
-    }
-    //第二層
-    else {
-        if (messageData[command] !== undefined && messageData[command][command] !== undefined) {
-            msg.channel.send(messageData[command][command]);
-            timerCleanWhoTrigger();
-        }
-        else {
-            timerCleanWhoTriggerStop();
-            whoTrigger[msg.author].secondUse = command;
-            embedData = messageData[whoTrigger[msg.author].firstUse][command];
-            msg.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
-            delete (whoTrigger[msg.author]);
+    const commands = {
+        '第一': {
+            execute(message) {
+                console.log('第一', message);
+            },
+            subcommands: {
+                '01': {
+                    execute(message) {
+                        console.log('第一', '01', message);
+                    },
+                    subcommands: {
+                        'A': {
+                            execute(message) {
+                                console.log('第一', '01', 'A', message);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     
