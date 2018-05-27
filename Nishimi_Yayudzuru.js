@@ -356,7 +356,7 @@ client.on('message', (msg) => {
         firstUse: command,
     };
 
-    if (messageData[command] === undefined || messageData[whoTrigger[msg.author].firstUse][command] === undefined) {
+    if (messageData[command] === undefined && messageData[whoTrigger[msg.author].firstUse][command] === undefined) {
         return;
     }
 
