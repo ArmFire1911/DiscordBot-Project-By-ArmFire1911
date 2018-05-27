@@ -373,12 +373,13 @@ client.on('message', (msg) => {
 
     console.log(commands[command]);
 
-    if (commands[command] !== undefined) {
-        execute(message);
+    const commandHandler = commands[command];
+
+    if (commandHandler !== undefined) {
+        commandHandler.execute(msg);
+        msg.reply('ok!')
     }
-    else {
-        return;
-    }
+
 
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}使用的指令成功了!`
