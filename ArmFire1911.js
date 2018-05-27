@@ -1,10 +1,10 @@
-//å•Ÿå‹•æ¨¡çµ„
+//±Ò°Ê¼Ò²Õ
 const cp = require('child_process');
 const token = process.env.token;
 const forkBot = function (code) {
-    const token = process.env['token_' + code]; //å–å¾—æ­¤botçš„token
+    const token = process.env['token_' + code]; //¨ú±o¦¹botªºtoken
     const env = { token: token };
-    const bot = cp.fork(`${__dirname}/${code}.js`, { env: env }); //è¨­å®šæ­¤botçš„ç’°å¢ƒè®Šæ•¸
+    const bot = cp.fork(`${__dirname}/${code}.js`, { env: env }); //³]©w¦¹botªºÀô¹ÒÅÜ¼Æ
     bot.on('exit', () => {
         //refork after 10s
         setTimeout(() => { forkBot(code); }, 10000);
@@ -15,27 +15,3 @@ forkBot('Nishimi_Yayudzuru');
 forkBot('G11');
 forkBot('Reiko');
 
-//listen port
-const http = require('http');
-http.createServer(function (request, response) {
-    response.writeHead(200, { 'Content-Type': 'text/plain' });
-    response.end('kurone is running\n');
-}).listen(process.env.PORT || 5239);
-//ping automatically
-const request = require('request');
-const makeItAlive = function () {
-    request.get
-        (
-        'https://armfire1911s-family.herokuapp.com/',
-        {},
-        function (error, response, body) {
-            console.log(`send a post`);
-            if (!error && response.statusCode == 200)
-                console.log(`OK`);
-            else
-                console.log(`return code: ${response.statusCode}`);
-        }
-        );
-};
-setInterval(makeItAlive, 600000);
-//ä»¥ä¸Šé‹ä½œæ¨¡çµ„æ„Ÿè¬ã€ŒsupåˆéŸ³å§å§ã€æä¾›å¹«åŠ©
