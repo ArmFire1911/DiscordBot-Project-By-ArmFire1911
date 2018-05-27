@@ -10,30 +10,6 @@ client.on("ready", () => {
 client.on('ready', () => {
     console.log(`以 ${client.user.tag}身分登入了!`);
 });
-//listen port
-const http = require('http');
-http.createServer(function (request, response) {
-    response.writeHead(200, { 'Content-Type': 'text/plain' });
-    response.end('kurone is running\n');
-}).listen(process.env.PORT || 5239);
-//ping automatically
-const request = require('request');
-const makeItAlive = function () {
-    request.get
-        (
-        'https://yayudzu-discord-bot.herokuapp.com/',
-        {},
-        function (error, response, body) {
-            console.log(`send a post`);
-            if (!error && response.statusCode == 200)
-                console.log(`OK`);
-            else
-                console.log(`return code: ${response.statusCode}`);
-        }
-        );
-};
-setInterval(makeItAlive, 600000);
-//避免結弦關掉的模組，感謝「sup初音姐姐」提供幫助
 
 //限制使用者使用的指令組
 const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^']
@@ -42,6 +18,24 @@ const channelLock = ['結弦help', 'Arm語錄', 'k哥語錄', '路易斯語錄',
 
 //使用者記錄模組
 let whoTrigger = {};
+//訊息類別模組
+const Command = class {
+    constructor(explanation, selections) {
+        this.explanation = explanation;
+        if (selections !== undefined) this.selections = selections;
+    }
+};
+const EmbedData = class {
+    constructor(~~~~) { ~~~~}
+};
+const miku = {
+    '指令1': Command(EmbedData(~~, ~~, ~~, ~~),
+        {
+            '01': Command(EmbedData(~~, ~~, ~~, ~~)),
+            '02': Command(EmbedData(~~, ~~, ~~, ~~)),
+        }),
+    '指令2': Command(EmbedData(~~, ~~, ~~, ~~)),
+};
 
 //內嵌式訊息模組
 function createEmbed(data) {
@@ -64,7 +58,11 @@ const EmbedTitle = ' ';
 //內嵌對話框內文
 const EmbedContent = ' ';
 //內容
+
+if()
+
 const messageData = {
+    //有第一層無第二層
     '結弦可愛': {
         avatarURL: 'https://i.imgur.com/vljAZT4.png',
         embedTitle: '[來自最可愛的老婆大人的訊息]',
@@ -125,7 +123,7 @@ const messageData = {
         '\n' +
         '其他黑歷史\n' +
         '```',
-
+    //有第一層有同名第二層
     'Arm語錄': {
         'Arm語錄':
             '```' +
@@ -372,40 +370,28 @@ client.on('message', (msg) => {
         }
     };
 
-    if (messageData[command] === undefined || messageData[whoTrigger[msg.author].firstUse][command]) {
+    if (messageData[command] === undefined && messageData[command][command] === undefined) {
         return;
-    };
-
-    console.log(
-        `${msg.author.username}(${msg.author})在${msg.channel}說：${msg.content}`
-    );//使用者紀錄
-
-    //命令設定
-    //單獨拉出指令表判斷
-    if (command === '結弦help') {
-        msg.channel.send(messageData[command]);
     }
+
+    //第一層
+    if (messageData[command] !== undefined && messageData[command][command] === undefined) {
+        if (command === '結弦help') {
+            msg.channel.send(messageData[command]);
+        }
+        else {
+            EmbedData = messageData[command];
+            msg.channel.send(EmbedData);
+        }
+    }
+    //第二層
     else {
-        //第一階段問答
-        if (whoTrigger[msg.author] === undefined) {
-            //老婆模組
-            if (messageData[command][command] === undefined) {
-                embedData = messageData[command];
-                msg.channel.send(createEmbed(embedData));
-            }
-            else {
-                //一般第一階段問答
-                whoTrigger[msg.author] = {
-                    theUser: msg.author,
-                    firstUse: command,
-                };
-                if (messageData[command][command] !== undefined) {
-                    msg.channel.send(messageData[command][command]);
-                }
-                else {
-                    return;
-                }
-            }
+        if (messageData[command] !== undefined && messageData[command][command] !== undefined) {
+            whoTrigger[msg.author] = {
+                theUser: msg.author,
+                firstUse: command,
+            };
+            msg.channel.send(messageData[command][command]);
             timerCleanWhoTrigger();
         }
         else {
@@ -416,6 +402,7 @@ client.on('message', (msg) => {
             delete (whoTrigger[msg.author]);
         }
     }
+    
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}使用的指令成功了!`
     );//使用紀錄
