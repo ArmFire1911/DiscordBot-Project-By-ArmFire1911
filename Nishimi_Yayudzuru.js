@@ -371,7 +371,7 @@ client.on('message', (msg) => {
         }
     };
 
-
+    console.log(commands[command]);
     
     console.log(
         `${msg.author.username}(${msg.author})在${msg.channel}使用的指令成功了!`
