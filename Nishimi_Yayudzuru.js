@@ -148,7 +148,7 @@ const messageData = {
             whoTrigger[message.author] = {
                 useWhat: []
             };
-            whoTrigger[message.author].useWhat.push(command);
+            whoTrigger[message.author].useWhat.push('Arm語錄');
             message.channel.send(
                 '```' +
                 '請輸入數字：\n' +
@@ -188,7 +188,7 @@ const messageData = {
             whoTrigger[message.author] = {
                 useWhat: []
             };
-            whoTrigger[message.author].useWhat.push(command);
+            whoTrigger[message.author].useWhat.push('k哥語錄');
             message.channel.send(
                 '```' +
                 '請輸入數字：\n' +
@@ -281,7 +281,7 @@ const messageData = {
             whoTrigger[message.author] = {
                 useWhat: []
             };
-            whoTrigger[message.author].useWhat.push(command);
+            whoTrigger[message.author].useWhat.push('路易斯語錄');
             message.channel.send(
                 '```' +
                 '請輸入數字：\n' +
@@ -309,7 +309,7 @@ const messageData = {
             whoTrigger[message.author] = {
                 useWhat: []
             };
-            whoTrigger[message.author].useWhat.push(command);
+            whoTrigger[message.author].useWhat.push('papa語錄');
             message.channel.send(
                 '```' +
                 '請輸入數字：\n' +
@@ -350,7 +350,7 @@ const messageData = {
             whoTrigger[message.author] = {
                 useWhat: []
             };
-            whoTrigger[message.author].useWhat.push(command);
+            whoTrigger[message.author].useWhat.push('蒼幻語錄');
             message.channel.send(
                 '```' +
                 '請輸入數字：\n' +
@@ -378,7 +378,7 @@ const messageData = {
             whoTrigger[message.author] = {
                 useWhat: []
             };
-            whoTrigger[message.author].useWhat.push(command);
+            whoTrigger[message.author].useWhat.push('Maruze語錄');
             message.channel.send(
                 '```' +
                 '請輸入數字：\n' +
@@ -406,7 +406,7 @@ const messageData = {
             whoTrigger[message.author] = {
                 useWhat: []
             };
-            whoTrigger[message.author].useWhat.push(command);
+            whoTrigger[message.author].useWhat.push('樓下支援花心圖');
             message.channel.send(
                 '```' +
                 '請輸入數字：\n' +
@@ -474,7 +474,7 @@ const messageData = {
             whoTrigger[message.author] = {
                 useWhat: []
             };
-            whoTrigger[message.author].useWhat.push(command);
+            whoTrigger[message.author].useWhat.push('其他黑歷史');
             message.channel.send(
                 '```' +
                 '請輸入數字：\n' +
