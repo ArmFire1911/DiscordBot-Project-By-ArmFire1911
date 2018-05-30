@@ -166,7 +166,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/iJe1yjY.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
             '02': {
@@ -178,7 +178,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
         }
@@ -211,7 +211,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/3oh9uYz.png'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
             '02': {
@@ -223,7 +223,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/Wt3ggTS.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
             '03': {
@@ -235,7 +235,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/sjtUBP8.png'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
             '04': {
@@ -247,7 +247,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/36VtpKq.png'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
             '05': {
@@ -259,7 +259,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/FoBhCkI.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
             '06': {
@@ -271,7 +271,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/ajFuPl7.png'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
         },
@@ -299,7 +299,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/yYXxCNR.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
         }
@@ -328,7 +328,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
             '02': {
@@ -340,7 +340,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
         },
@@ -368,7 +368,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/7Rp7fsR.png'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
         },
@@ -396,7 +396,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/uc4kwl4.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
         },
@@ -427,7 +427,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/dwmVnuX.png'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
             '02': {
@@ -439,7 +439,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/606lQCP.png'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
 
@@ -452,7 +452,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/Vx06cOp.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
             '04': {
@@ -464,7 +464,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/UYtMBUq.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
         },
@@ -493,7 +493,7 @@ const messageData = {
                         pictureURL: 'https://i.imgur.com/evZLWQY.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
-                    delete whoTrigger[msg.author];
+                    delete whoTrigger[message.author];
                 }
             },
             '02': {
