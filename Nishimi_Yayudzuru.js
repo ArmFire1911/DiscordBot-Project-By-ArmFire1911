@@ -44,251 +44,464 @@ const EmbedContent = ' ';
 const messageData = {
     //有第一層無第二層
     '結弦可愛': {
-        avatarURL: 'https://i.imgur.com/vljAZT4.png',
-        embedTitle: '[來自最可愛的老婆大人的訊息]',
-        embedContent: '好噁心!不准靠近我四公尺以內! \n不…不過這樣子也有點可憐，不然你屏住呼吸可以再前進一公尺',
-        pictureURL: ''
-    },
-    '這...這是給我的便當嗎?': {
-        avatarURL: 'https://i.imgur.com/vljAZT4.png',
-        embedTitle: '[來自最可愛的老婆大人的訊息]',
-        embedContent: '今天的便當，只是剛好有剩餘的食材才順手做的唷。 \n因為清理很麻煩，所以絕對不准你剩下來，知道了吧！',
-        pictureURL: ''
-    },
-    '結弦最喜歡我了，對吧!': {
-        avatarURL: 'https://i.imgur.com/vljAZT4.png',
-        embedTitle: '[來自最可愛的老婆大人的訊息]',
-        embedContent: '別、別說傻話了……我我我都說沒有了不是嗎！？',
-        pictureURL: ''
-    },
-    '那個女孩很可愛呢': {
-        avatarURL: 'https://i.imgur.com/vljAZT4.png',
-        embedTitle: '[來自最可愛的老婆大人的訊息]',
-        embedContent: '花心是不好的哦...對吧，惠勝 ^^ :knife::chicken:',
-        pictureURL: ''
-    },
-    '我回來了!': {
-        avatarURL: 'https://i.imgur.com/bb10UWY.jpg',
-        embedTitle: '[來自最可愛的老婆大人的訊息]',
-        embedContent: '你要先吃飯? \n還是先洗澡? \n還是先·吃·我?',
-        pictureURL: ''
-    },
-    '結弦，拍照~': {
-        avatarURL: 'https://i.imgur.com/vljAZT4.png',
-        embedTitle: '[來自最可愛的老婆大人的訊息]',
-        embedContent: '如果是你要拍的話...好吧，只有一次喔!',
-        pictureURL: 'https://i.imgur.com/3g8Y8jE.png'
-    },
-    '結弦，拍照^^': {
-        avatarURL: 'https://i.imgur.com/vljAZT4.png',
-        embedTitle: '[來自最可愛的老婆大人的訊息]',
-        embedContent: '不...不行!絕對不行!!!!',
-        pictureURL: 'https://i.imgur.com/kKxUFRr.jpg'
-    },
-    '結弦help':
-        '我所撰寫的這本書 *ACGN股民語錄集* 乃集ACGN股民眾多幹話、黑歷史於一身之曠世巨作，請選擇你要查看的冊目\n' +
-        '語錄組：' +
-        '```' +
-        'Arm語錄\n' +
-        '\n' +
-        'Maruze語錄\n' +
-        '\n' +
-        'k哥語錄\n' +
-        '\n' +
-        '蒼幻語錄' +
-        '```' +
-        '黑歷史：' +
-        '```' +
-        '樓下支援花心圖\n' +
-        '\n' +
-        '其他黑歷史\n' +
-        '```',
-    //有第一層有同名第二層
-    'Arm語錄': {
-        'Arm語錄':
-            '```' +
-            '請輸入數字：\n' +
-            '01.整個股市都是我的後宮\n' +
-            '02.人體榨汁機' +
-            '```',
-        '01': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '^^:knife::chicken:',
-            pictureURL: 'https://i.imgur.com/iJe1yjY.jpg'
-        },
-        '02': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: ':look_up:',
-            pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
-        },
-    },
-
-    'k哥語錄': {
-        'k哥語錄':
-            '```' +
-            '請輸入數字：\n' +
-            '01.張開你的嘴~靠近我雙腿~\n' +
-            '02.來學校就是為了要...\n' +
-            '03.我覺得禱輝一定有...\n' +
-            '04.我幹過...\n' +
-            '05.自己都不夠吸\n' +
-            '06.幹，缺錢啦' +
-            '```',
-        '01': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '呷kㄝ肖年家~係禱灰~~~',
-            pictureURL: 'https://i.imgur.com/3oh9uYz.png'
-        },
-        '02': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '呷kㄝ肖年家~係禱灰~~~',
-            pictureURL: 'https://i.imgur.com/Wt3ggTS.jpg'
-        },
-        '03': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '呷kㄝ肖年家~係禱灰~~~',
-            pictureURL: 'https://i.imgur.com/sjtUBP8.png'
-        },
-        '04': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '呷kㄝ肖年家~係禱灰~~~',
-            pictureURL: 'https://i.imgur.com/36VtpKq.png'
-        },
-        '05': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '呷kㄝ肖年家~係禱灰~~~',
-            pictureURL: 'https://i.imgur.com/FoBhCkI.jpg'
-        },
-        '06': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '呷kㄝ肖年家~係禱灰~~~',
-            pictureURL: 'https://i.imgur.com/ajFuPl7.png'
-        },
-    },
-
-    '路易斯語錄': {
-        '路易斯語錄':
-            '```' +
-            '請輸入數字：\n' +
-            '01.加藤鷹的ㄋㄟㄋㄟ讚\n' +
-            '```',
-        '01': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '口味真重...',
-            pictureURL: 'https://i.imgur.com/yYXxCNR.jpg'
-        },
-    },
-
-    'papa語錄': {
-        'papa語錄':
-            '```' +
-            '請輸入數字：\n' +
-            '01.性別不同怎麼談戀愛\n' +
-            '02.只要是貓我都能%' +
-            '```',
-        '01': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '股市甲甲papa狗',
-            pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
-        },
-        '02': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: ':噁心papa狗:',
-            pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
-        },
-    },
-
-    '蒼幻語錄': {
-        '蒼幻語錄':
-            '```' +
-            '請輸入數字：\n' +
-            '01.警察叔叔，就是這個警察!' +
-            '```',
-        '01': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '查無不法，謝謝指教˙ˇ˙',
-            pictureURL: 'https://i.imgur.com/7Rp7fsR.png'
+        execute(message) {
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '好噁心!不准靠近我四公尺以內! \n不…不過這樣子也有點可憐，不然你屏住呼吸可以再前進一公尺',
+                pictureURL: ''
+            }
+            message.channel.send(createEmbed(embedData));
         }
     },
-
-    'Maruze語錄': {
-        'Maruze語錄':
-            '```' +
-            '請輸入數字：\n' +
-            '01.練肌肌\n' +
-            '```',
-        '01': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '雞鴨!',
-            pictureURL: 'https://i.imgur.com/uc4kwl4.jpg'
+    '這...這是給我的便當嗎?': {
+        execute(message) {
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '今天的便當，只是剛好有剩餘的食材才順手做的唷。 \n因為清理很麻煩，所以絕對不准你剩下來，知道了吧！',
+                pictureURL: ''
+            }
+            message.channel.send(createEmbed(embedData));
+        }
+    },
+    '結弦最喜歡我了，對吧!': {
+        execute(message) {
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '別、別說傻話了……我我我都說沒有了不是嗎！？',
+                pictureURL: ''
+            }
+            message.channel.send(createEmbed(embedData));
+        }
+    },
+    '那個女孩很可愛呢': {
+        execute(message) {
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '花心是不好的哦...對吧，惠勝 ^^ :knife::chicken:',
+                pictureURL: ''
+            }
+            message.channel.send(createEmbed(embedData));
+        }
+    },
+    '我回來了!': {
+        execute(message) {
+            embedData = {
+                avatarURL: 'https://i.imgur.com/bb10UWY.jpg',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '你要先吃飯? \n還是先洗澡? \n還是先·吃·我?',
+                pictureURL: ''
+            }
+            message.channel.send(createEmbed(embedData));
+        }
+    },
+    '結弦，拍照~': {
+        execute(message) {
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '如果是你要拍的話...好吧，只有一次喔!',
+                pictureURL: 'https://i.imgur.com/3g8Y8jE.png'
+            }
+            message.channel.send(createEmbed(embedData));
+        }
+    },
+    '結弦，拍照^^': {
+        execute(message) {
+            embedData = {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的老婆大人的訊息]',
+                embedContent: '不...不行!絕對不行!!!!',
+                pictureURL: 'https://i.imgur.com/kKxUFRr.jpg'
+            }
+            message.channel.send(createEmbed(embedData));
+        }
+    },
+    '結弦help': {
+        execute(message) {
+            message.channel.send(
+                '我所撰寫的這本書 *ACGN股民語錄集* 乃集ACGN股民眾多幹話、黑歷史於一身之曠世巨作，請選擇你要查看的冊目\n' +
+                '語錄組：' +
+                '```' +
+                'Arm語錄\n' +
+                '\n' +
+                'Maruze語錄\n' +
+                '\n' +
+                'k哥語錄\n' +
+                '\n' +
+                '蒼幻語錄' +
+                '```' +
+                '黑歷史：' +
+                '```' +
+                '樓下支援花心圖\n' +
+                '\n' +
+                '其他黑歷史\n' +
+                '```');
         },
     },
-
+    //有第一層有同名第二層
+    'Arm語錄': {
+        execute(message) {
+            whoTrigger[message.author] = {
+                useWhat: []
+            };
+            whoTrigger[message.author].useWhat.push(command);
+            message.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.整個股市都是我的後宮\n' +
+                '02.人體榨汁機' +
+                '```');
+        },
+        submessageData: {
+            '01': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '^^:knife::chicken:',
+                        pictureURL: 'https://i.imgur.com/iJe1yjY.jpg'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+            '02': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: ':look_up:',
+                        pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+        }
+    },
+    'k哥語錄': {
+        execute(message) {
+            whoTrigger[message.author] = {
+                useWhat: []
+            };
+            whoTrigger[message.author].useWhat.push(command);
+            message.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.張開你的嘴~靠近我雙腿~\n' +
+                '02.來學校就是為了要...\n' +
+                '03.我覺得禱輝一定有...\n' +
+                '04.我幹過...\n' +
+                '05.自己都不夠吸\n' +
+                '06.幹，缺錢啦' +
+                '```',
+            );
+        },
+        submessageData: {
+            '01': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                        pictureURL: 'https://i.imgur.com/3oh9uYz.png'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+            '02': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                        pictureURL: 'https://i.imgur.com/Wt3ggTS.jpg'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+            '03': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                        pictureURL: 'https://i.imgur.com/sjtUBP8.png'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+            '04': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                        pictureURL: 'https://i.imgur.com/36VtpKq.png'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+            '05': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                        pictureURL: 'https://i.imgur.com/FoBhCkI.jpg'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+            '06': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '呷kㄝ肖年家~係禱灰~~~',
+                        pictureURL: 'https://i.imgur.com/ajFuPl7.png'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+        },
+    },
+    '路易斯語錄': {
+        execute(message) {
+            whoTrigger[message.author] = {
+                useWhat: []
+            };
+            whoTrigger[message.author].useWhat.push(command);
+            message.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.加藤鷹的ㄋㄟㄋㄟ讚\n' +
+                '```'
+            );
+        },
+        submessageData: {
+            '01': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '口味真重...',
+                        pictureURL: 'https://i.imgur.com/yYXxCNR.jpg'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+        }
+    },
+    'papa語錄': {
+        execute(message) {
+            whoTrigger[message.author] = {
+                useWhat: []
+            };
+            whoTrigger[message.author].useWhat.push(command);
+            message.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.性別不同怎麼談戀愛\n' +
+                '02.只要是貓我都能%' +
+                '```'
+            );
+        },
+        submessageData: {
+            '01': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '股市甲甲papa狗',
+                        pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+            '02': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: ':噁心papa狗:',
+                        pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+        },
+    },
+    '蒼幻語錄': {
+        execute(message) {
+            whoTrigger[message.author] = {
+                useWhat: []
+            };
+            whoTrigger[message.author].useWhat.push(command);
+            message.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.警察叔叔，就是這個警察!' +
+                '```'
+            );
+        },
+        submessageData: {
+            '01': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '查無不法，謝謝指教˙ˇ˙',
+                        pictureURL: 'https://i.imgur.com/7Rp7fsR.png'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+        },
+    },
+    'Maruze語錄': {
+        execute(message) {
+            whoTrigger[message.author] = {
+                useWhat: []
+            };
+            whoTrigger[message.author].useWhat.push(command);
+            message.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.練肌肌\n' +
+                '```'
+            );
+        },
+        submessageData: {
+            '01': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '雞鴨!',
+                        pictureURL: 'https://i.imgur.com/uc4kwl4.jpg'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+        },
+    },
     '樓下支援花心圖': {
-        '樓下支援花心圖':
-            '```' +
-            '請輸入數字：\n' +
-            '01.花心尼\n' +
-            '02.花心被打的阿尼\n' +
-            '03.花心阿姆咪\n' +
-            '04.阿姆咪的花心比較級' +
-            '```',
-        '01': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '花心阿尼4ni',
-            pictureURL: 'https://i.imgur.com/dwmVnuX.png'
+        execute(message) {
+            whoTrigger[message.author] = {
+                useWhat: []
+            };
+            whoTrigger[message.author].useWhat.push(command);
+            message.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.花心尼\n' +
+                '02.花心被打的阿尼\n' +
+                '03.花心阿姆咪\n' +
+                '04.阿姆咪的花心比較級' +
+                '```'
+            );
         },
-        '02': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '花心被打的阿尼:look_up:',
-            pictureURL: 'https://i.imgur.com/606lQCP.png'
-        },
-        '03': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
-            pictureURL: 'https://i.imgur.com/Vx06cOp.jpg'
-        },
-        '04': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
-            pictureURL: 'https://i.imgur.com/UYtMBUq.jpg'
+        submessageData: {
+            '01': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '花心阿尼4ni',
+                        pictureURL: 'https://i.imgur.com/dwmVnuX.png'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+            '02': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '花心被打的阿尼:look_up:',
+                        pictureURL: 'https://i.imgur.com/606lQCP.png'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+
+            '03': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
+                        pictureURL: 'https://i.imgur.com/Vx06cOp.jpg'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+            '04': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
+                        pictureURL: 'https://i.imgur.com/UYtMBUq.jpg'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
         },
     },
     '其他黑歷史': {
-        '其他黑歷史':
-            '```' +
-            '請輸入數字：\n' +
-            '01.20噁男名單\n' +
-            '02.色老頭' +
-            '```',
-        '01': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '20噁男嘔嘔嘔嘔偶',
-            pictureURL: 'https://i.imgur.com/evZLWQY.jpg'
+        execute(message) {
+            whoTrigger[message.author] = {
+                useWhat: []
+            };
+            whoTrigger[message.author].useWhat.push(command);
+            message.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.20噁男名單\n' +
+                '02.色老頭' +
+                '```'
+            );
         },
-        '02': {
-            avatarURL: 'https://i.imgur.com/vljAZT4.png',
-            embedTitle: '[來自最可愛的結弦的訊息]',
-            embedContent: '蘿莉控色老頭，死刑!',
-            pictureURL: 'https://i.imgur.com/yNMYnve.png'
+        submessageData: {
+            '01': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '20噁男嘔嘔嘔嘔偶',
+                        pictureURL: 'https://i.imgur.com/evZLWQY.jpg'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[msg.author];
+                }
+            },
+            '02': {
+                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                embedTitle: '[來自最可愛的結弦的訊息]',
+                embedContent: '蘿莉控色老頭，死刑!',
+                pictureURL: 'https://i.imgur.com/yNMYnve.png'
+            },
         },
     },
 };
@@ -315,27 +528,6 @@ function detect(author) {
     }
 };
 
-const commands = {
-    '第一': {
-        execute(message) {
-            console.log('第一', message);
-        },
-        subcommands: {
-            '01': {
-                execute(message) {
-                    console.log('第一', '01', message);
-                },
-                subcommands: {
-                    'A': {
-                        execute(message) {
-                            console.log('第一', '01', 'A', message);
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
 //指令設定區
 client.on('message', (msg) => {
     let lit, command;
@@ -370,19 +562,31 @@ client.on('message', (msg) => {
             return;
         }
     };
-
-    console.log(commands[command]);
-
-    const commandHandler = commands[command];
-
-    if (commandHandler !== undefined) {
-        commandHandler.execute(msg);
-        msg.reply('ok!')
+    if (messageData[command] !== undefined && whoTrigger[msg.author] === undefined) {
+        messageData[command].execute(msg);
+        if (whoTrigger[msg.author] !== undefined) {
+            timerCleanWhoTrigger();
+        }
     }
-
-
+    else if (whoTrigger[msg.author] !== undefined && whoTrigger[msg.author].useWhat !== undefined) {
+        timerCleanWhoTriggerStop();
+        let commandHandler = messageData[whoTrigger[msg.author].useWhat[0]];
+        for (let i = 1; i < whoTrigger[msg.author].useWhat.length; i++) {
+            commandHandler = commandHandler.submessageData[whoTrigger[msg.author].useWhat[i]]
+        }
+        commandHandler = commandHandler.submessageData[command];
+        if (commandHandler !== undefined) {
+            commandHandler.execute(msg);
+        }
+        else {
+            delete whoTrigger[msg.author];
+        }
+    }
+    else {
+        delete whoTrigger[msg.author];
+    }
     console.log(
-        `${msg.author.username}(${msg.author})在${msg.channel}使用的指令成功了!`
+        `${msg.author.username}(${msg.author})在${msg.channel}使用了${command}!`
     );//使用紀錄
 });
 
