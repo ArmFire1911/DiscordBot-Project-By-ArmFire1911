@@ -497,10 +497,16 @@ const messageData = {
                 }
             },
             '02': {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                embedTitle: '[來自最可愛的結弦的訊息]',
-                embedContent: '蘿莉控色老頭，死刑!',
-                pictureURL: 'https://i.imgur.com/yNMYnve.png'
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '蘿莉控色老頭，死刑!',
+                        pictureURL: 'https://i.imgur.com/yNMYnve.png'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[message.author];
+                }
             },
         },
     },
@@ -587,7 +593,7 @@ client.on('message', (msg) => {
         delete whoTrigger[msg.author];
     }
     console.log(
-        `${msg.author.username}(${msg.author})在${msg.channel}使用了${command}!`
+        `${msg.author.username}(${msg.author})在${msg.channel}使用了 ${command}!`
     );//使用紀錄
 });
 
