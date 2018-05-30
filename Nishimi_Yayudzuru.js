@@ -165,7 +165,7 @@ const messageData = {
                         embedContent: '^^:knife::chicken:',
                         pictureURL: 'https://i.imgur.com/iJe1yjY.jpg'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -177,7 +177,7 @@ const messageData = {
                         embedContent: ':look_up:',
                         pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -210,7 +210,7 @@ const messageData = {
                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                         pictureURL: 'https://i.imgur.com/3oh9uYz.png'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -222,7 +222,7 @@ const messageData = {
                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                         pictureURL: 'https://i.imgur.com/Wt3ggTS.jpg'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -234,7 +234,7 @@ const messageData = {
                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                         pictureURL: 'https://i.imgur.com/sjtUBP8.png'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -246,7 +246,7 @@ const messageData = {
                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                         pictureURL: 'https://i.imgur.com/36VtpKq.png'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -258,7 +258,7 @@ const messageData = {
                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                         pictureURL: 'https://i.imgur.com/FoBhCkI.jpg'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -270,7 +270,7 @@ const messageData = {
                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                         pictureURL: 'https://i.imgur.com/ajFuPl7.png'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -298,7 +298,7 @@ const messageData = {
                         embedContent: '口味真重...',
                         pictureURL: 'https://i.imgur.com/yYXxCNR.jpg'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -327,7 +327,7 @@ const messageData = {
                         embedContent: '股市甲甲papa狗',
                         pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -339,7 +339,7 @@ const messageData = {
                         embedContent: ':噁心papa狗:',
                         pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -367,7 +367,7 @@ const messageData = {
                         embedContent: '查無不法，謝謝指教˙ˇ˙',
                         pictureURL: 'https://i.imgur.com/7Rp7fsR.png'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -395,7 +395,7 @@ const messageData = {
                         embedContent: '雞鴨!',
                         pictureURL: 'https://i.imgur.com/uc4kwl4.jpg'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -426,7 +426,7 @@ const messageData = {
                         embedContent: '花心阿尼4ni',
                         pictureURL: 'https://i.imgur.com/dwmVnuX.png'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -438,7 +438,7 @@ const messageData = {
                         embedContent: '花心被打的阿尼:look_up:',
                         pictureURL: 'https://i.imgur.com/606lQCP.png'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -451,7 +451,7 @@ const messageData = {
                         embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
                         pictureURL: 'https://i.imgur.com/Vx06cOp.jpg'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -463,7 +463,7 @@ const messageData = {
                         embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
                         pictureURL: 'https://i.imgur.com/UYtMBUq.jpg'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
@@ -492,7 +492,7 @@ const messageData = {
                         embedContent: '20噁男嘔嘔嘔嘔偶',
                         pictureURL: 'https://i.imgur.com/evZLWQY.jpg'
                     };
-                    message.channel.send(createEmbed(embedData));
+                    message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                     delete whoTrigger[message.author];
                 }
             },
