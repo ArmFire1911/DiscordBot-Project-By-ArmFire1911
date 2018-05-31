@@ -192,7 +192,6 @@ const messageData = {
                         'ArmFire1911:\n' +
                         '```' +
                         '我之前是在甘蔗店打工的，而我榨甘蔗的原則是：\n' +
-                        '我之前是在甘蔗店打工的，而我榨甘蔗的原則是：\n' +
                         '\n' +
                         '沒錯，就是幹你娘榨爆，我才不管甚麼公司虧損三小的，每次榨的甘蔗就是姬芭一大杯。小杯榨成大杯，' +
                         '中杯榨成胖胖杯。胖胖杯買一送一，跟把整個店的甘蔗全送給你沒兩樣。\n' +
@@ -592,12 +591,18 @@ client.on('message', (msg) => {
             return;
         }
     };
+    //第一層
     if (messageData[command] !== undefined && whoTrigger[msg.author] === undefined) {
         messageData[command].execute(msg);
         if (whoTrigger[msg.author] !== undefined) {
             timerCleanWhoTrigger();
+            //使用紀錄
+            console.log(
+                `${msg.author.username}(${msg.author})在${msg.channel}使用了: ${command}!`
+            );
         }
     }
+    //其他層
     else if (whoTrigger[msg.author] !== undefined && whoTrigger[msg.author].useWhat !== undefined) {
         timerCleanWhoTriggerStop();
         let commandHandler = messageData[whoTrigger[msg.author].useWhat[0]];
@@ -611,14 +616,17 @@ client.on('message', (msg) => {
         else {
             msg.reply('沒有這個選項啦!');
             delete whoTrigger[msg.author];
+            //使用紀錄
+            console.log(
+                `${msg.author.username}(${msg.author})在${msg.channel}使用了: ${command}!`
+            );
         }
     }
+    //非法指令處理
     else {
         delete whoTrigger[msg.author];
     }
-    console.log(
-        `${msg.author.username}(${msg.author})在${msg.channel}使用了 ${command}!`
-    );//使用紀錄
-});
+}
+);
 
 client.login(process.env['token']);
