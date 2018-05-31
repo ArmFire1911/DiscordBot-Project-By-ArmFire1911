@@ -132,6 +132,10 @@ const messageData = {
                 '\n' +
                 'k哥語錄\n' +
                 '\n' +
+                '路易斯語錄\n' +
+                '\n' +
+                'papa語錄\n' +
+                '\n' +
                 '蒼幻語錄' +
                 '```' +
                 '黑歷史：' +
@@ -153,7 +157,8 @@ const messageData = {
                 '```' +
                 '請輸入數字：\n' +
                 '01.整個股市都是我的後宮\n' +
-                '02.人體榨汁機' +
+                '02.人體榨汁機\n' +
+                '03.在甘蔗汁店打工' +
                 '```');
         },
         submessageData: {
@@ -181,7 +186,23 @@ const messageData = {
                     delete whoTrigger[message.author];
                 }
             },
-        }
+            '03': {
+                execute(message) {
+                    message.channel.send(
+                        '我之前是在甘蔗店打工的，而我榨甘蔗的原則是：\n' +
+                        '我之前是在甘蔗店打工的，而我榨甘蔗的原則是：\n' +
+                        '\n' +
+                        '沒錯，就是幹你娘榨爆，我才不管甚麼公司虧損三小的，每次榨的甘蔗就是姬芭一大杯。小杯榨成大杯，' +
+                        '中杯榨成胖胖杯。胖胖杯買一送一，跟把整個店的甘蔗全送給你沒兩樣。\n' +
+                        '\n' +
+                        '我還記得，那個月上班25天，經理跑來跟我說，這個月甘蔗虧損二十六噸，你有頭緒嗎？\n' +
+                        '\n' +
+                        '我他媽的怎麼會知道。'
+                    );
+                    delete whoTrigger[message.author];
+                },
+            },
+        },
     },
     'k哥語錄': {
         execute(message) {
@@ -325,7 +346,7 @@ const messageData = {
                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                         embedTitle: '[來自最可愛的結弦的訊息]',
                         embedContent: '股市甲甲papa狗',
-                        pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
+                        pictureURL: 'https://i.imgur.com/KeSMJCy.png'
                     };
                     message.channel.send(createEmbed(embedData));
                     delete whoTrigger[message.author];
@@ -337,7 +358,7 @@ const messageData = {
                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                         embedTitle: '[來自最可愛的結弦的訊息]',
                         embedContent: ':噁心papa狗:',
-                        pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
+                        pictureURL: 'https://i.imgur.com/WdKrZlc.png'
                     };
                     message.channel.send(createEmbed(embedData));
                     delete whoTrigger[message.author];
