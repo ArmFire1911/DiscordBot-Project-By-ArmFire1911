@@ -189,6 +189,8 @@ const messageData = {
             '03': {
                 execute(message) {
                     message.channel.send(
+                        'ArmFire1911:\n' +
+                        '```' +
                         '我之前是在甘蔗店打工的，而我榨甘蔗的原則是：\n' +
                         '我之前是在甘蔗店打工的，而我榨甘蔗的原則是：\n' +
                         '\n' +
@@ -197,7 +199,8 @@ const messageData = {
                         '\n' +
                         '我還記得，那個月上班25天，經理跑來跟我說，這個月甘蔗虧損二十六噸，你有頭緒嗎？\n' +
                         '\n' +
-                        '我他媽的怎麼會知道。'
+                        '我他媽的怎麼會知道。' +
+                        '```'
                     );
                     delete whoTrigger[message.author];
                 },
