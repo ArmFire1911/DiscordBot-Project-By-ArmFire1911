@@ -191,7 +191,7 @@ const messageData = {
                                     embedData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
-                                        embedContent: ':look_up:',
+                                        embedContent: '甘蔗王之名從此誕生',
                                         pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
                                     };
                                     message.channel.send(createEmbed(embedData));
@@ -201,7 +201,7 @@ const messageData = {
                             '03': {
                                 execute(message) {
                                     message.channel.send(
-                                        'ArmFire1911:\n' +
+                                        'By ArmFire1911:\n' +
                                         '```' +
                                         '我之前是在甘蔗店打工的，而我榨甘蔗的原則是：\n' +
                                         '\n' +
@@ -554,7 +554,7 @@ const messageData = {
                                     embedData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
-                                        embedContent: '20噁男嘔嘔嘔嘔偶',
+                                        embedContent: '20噁男嘔嘔嘔嘔嘔',
                                         pictureURL: 'https://i.imgur.com/evZLWQY.jpg'
                                     };
                                     message.channel.send(createEmbed(embedData));
