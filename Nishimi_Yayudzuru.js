@@ -148,13 +148,13 @@ const messageData = {
                         '\n' +
                         '02.k哥語錄\n' +
                         '\n' +
-                        '06.Maruze語錄\n' +
-                        '\n' +
                         '03.路易斯語錄\n' +
                         '\n' +
                         '04.哭米口語錄\n' +
                         '\n' +
                         '05.papa語錄\n' +
+                        '\n' +
+                        '06.Maruze語錄\n' +
                         '\n' +
                         '07.蒼幻語錄' +
                         '```'
@@ -384,9 +384,9 @@ const messageData = {
                             '01': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                                        embedTitle: '[來自最可愛的結弦的訊息]',
-                                        embedContent: '股市甲甲papa狗',
+                                        avatarURL: 'https://i.imgur.com/lUxRae0.jpg',
+                                        embedTitle: '[來自雪乃手機的訊息]',
+                                        embedContent: '老公變甲甲，該回國了˙ˇ˙',
                                         pictureURL: 'https://i.imgur.com/KeSMJCy.png'
                                     };
                                     message.channel.send(createEmbed(embedData));
@@ -396,9 +396,9 @@ const messageData = {
                             '02': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
-                                        embedTitle: '[來自最可愛的結弦的訊息]',
-                                        embedContent: '噁心papa狗',
+                                        avatarURL: 'https://i.imgur.com/lUxRae0.jpg',
+                                        embedTitle: '[來自雪乃手機的訊息]',
+                                        embedContent: '%貓仔老公，害我氣到差點回國',
                                         pictureURL: 'https://i.imgur.com/WdKrZlc.png'
                                     };
                                     message.channel.send(createEmbed(embedData));
