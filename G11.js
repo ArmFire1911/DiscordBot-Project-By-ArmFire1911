@@ -5,7 +5,7 @@ const client = new Discord.Client({ autoReconnect: true });
 client.on("ready", () => {
     //用於統計使用者
     console.log(`G11回家囉!接觸了 ${client.users.size} 位成員，看到了 ${client.channels.size} 個頻道，加入了 ${client.guilds.size} 個伺服器`);
-    client.user.setActivity(`陪ArmFire1911聊天`);
+    client.user.setActivity(`跟ArmFire1911睡覺|睡鼠help`);
 });
 client.on('ready', () => {
     console.log(`以 ${client.user.tag}身分登入了!`);

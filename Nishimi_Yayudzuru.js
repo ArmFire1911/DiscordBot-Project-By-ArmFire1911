@@ -5,7 +5,7 @@ const client = new Discord.Client({ autoReconnect: true });
 client.on("ready", () => {
     //用於統計使用者
     console.log(`結弦回家囉!接觸了 ${client.users.size} 位成員，看到了 ${client.channels.size} 個頻道，加入了 ${client.guilds.size} 個伺服器`);
-    client.user.setActivity(`陪ArmFire1911聊天`);
+    client.user.setActivity(`陪ArmFire1911聊天|結弦help`);
 });
 client.on('ready', () => {
     console.log(`以 ${client.user.tag}身分登入了!`);
@@ -14,7 +14,8 @@ client.on('ready', () => {
 //限制使用者使用的指令組
 const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^']
 //限制不能於特定頻道使用的指令組
-const channelLock = ['結弦help', 'Arm語錄', 'k哥語錄', '路易斯語錄', 'papa語錄', '蒼幻語錄', '樓下支援花心圖', '其他黑歷史']
+const channelLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^',
+    '結弦help', 'Arm語錄', 'k哥語錄', '路易斯語錄', '哭米口語錄', 'papa語錄', '蒼幻語錄', '樓下支援花心圖', '其他黑歷史', '股市cp']
 
 //使用者記錄模組
 let whoTrigger = {};
@@ -134,6 +135,8 @@ const messageData = {
                 '\n' +
                 '路易斯語錄\n' +
                 '\n' +
+                '哭米口語錄\n' +
+                '\n' +
                 'papa語錄\n' +
                 '\n' +
                 '蒼幻語錄' +
@@ -143,7 +146,13 @@ const messageData = {
                 '樓下支援花心圖\n' +
                 '\n' +
                 '其他黑歷史\n' +
-                '```');
+                '```' +
+                '\n' +
+                '股市cp：\n' +
+                '```' +
+                '哭米口xPAPA\n' +
+                '```'
+            );
         },
     },
     //有第一層有同名第二層
@@ -158,7 +167,8 @@ const messageData = {
                 '請輸入數字：\n' +
                 '01.整個股市都是我的後宮\n' +
                 '02.人體榨汁機\n' +
-                '03.在甘蔗汁店打工' +
+                '03.在甘蔗汁店打工\n' +
+                '04.我準備賣屁股了\n' +
                 '```');
         },
         submessageData: {
@@ -203,6 +213,18 @@ const messageData = {
                     );
                     delete whoTrigger[message.author];
                 },
+            },
+            '04': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '為保護當事青蛙，進行馬賽克處理',
+                        pictureURL: 'https://i.imgur.com/hbHCujS.png'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[message.author];
+                }
             },
         },
     },
@@ -327,6 +349,33 @@ const messageData = {
             },
         }
     },
+    '哭米口語錄': {
+        execute(message) {
+            whoTrigger[message.author] = {
+                useWhat: []
+            };
+            whoTrigger[message.author].useWhat.push('哭米口語錄');
+            message.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.他每天都被室友肛\n' +
+                '```');
+        },
+        submessageData: {
+            '01': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '五樓自肥',
+                        pictureURL: 'https://i.imgur.com/7Qsixox.png'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[message.author];
+                }
+            },
+        },
+    },
     'papa語錄': {
         execute(message) {
             whoTrigger[message.author] = {
@@ -359,7 +408,7 @@ const messageData = {
                     embedData = {
                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                         embedTitle: '[來自最可愛的結弦的訊息]',
-                        embedContent: ':噁心papa狗:',
+                        embedContent: '噁心papa狗',
                         pictureURL: 'https://i.imgur.com/WdKrZlc.png'
                     };
                     message.channel.send(createEmbed(embedData));
@@ -526,6 +575,33 @@ const messageData = {
                         embedTitle: '[來自最可愛的結弦的訊息]',
                         embedContent: '蘿莉控色老頭，死刑!',
                         pictureURL: 'https://i.imgur.com/yNMYnve.png'
+                    };
+                    message.channel.send(createEmbed(embedData));
+                    delete whoTrigger[message.author];
+                }
+            },
+        },
+    },
+    '股市cp': {
+        execute(message) {
+            whoTrigger[message.author] = {
+                useWhat: []
+            };
+            whoTrigger[message.author].useWhat.push('股市cp');
+            message.channel.send(
+                '```' +
+                '請輸入數字：\n' +
+                '01.苦米口xPAPA\n' +
+                '```');
+        },
+        submessageData: {
+            '01': {
+                execute(message) {
+                    embedData = {
+                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                        embedTitle: '[來自最可愛的結弦的訊息]',
+                        embedContent: '五樓自肥',
+                        pictureURL: 'https://i.imgur.com/gehNYp8.jpg'
                     };
                     message.channel.send(createEmbed(embedData));
                     delete whoTrigger[message.author];
