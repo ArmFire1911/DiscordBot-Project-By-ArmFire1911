@@ -15,7 +15,7 @@ client.on('ready', () => {
 const userLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^']
 //限制不能於特定頻道使用的指令組
 const channelLock = ['結弦可愛', '這...這是給我的便當嗎?', '結弦最喜歡我了，對吧!', '那個女孩很可愛呢', '我回來了', '我回來了!', '結弦，拍照~', '結弦，拍照^^',
-    '結弦help', 'Arm語錄', 'k哥語錄', '路易斯語錄', '哭米口語錄', 'papa語錄', '蒼幻語錄', '樓下支援花心圖', '其他黑歷史', '股市cp']
+    '結弦help']
 
 //使用者記錄模組
 let whoTrigger = {};
@@ -593,7 +593,7 @@ const messageData = {
                             embedData = {
                                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                 embedTitle: '[來自最可愛的結弦的訊息]',
-                                embedContent: '五樓自肥',
+                                embedContent: '麗奈是papa的老婆，又麗奈是哭米口老婆的老婆，則papa是哭米口的老婆，得證^^',
                                 pictureURL: 'https://i.imgur.com/gehNYp8.jpg'
                             };
                             message.channel.send(createEmbed(embedData));
