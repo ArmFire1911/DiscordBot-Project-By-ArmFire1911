@@ -140,9 +140,6 @@ const messageData = {
         submessageData: {
             '01': {
                 execute(message) {
-                    whoTrigger[message.author] = {
-                        useWhat: []
-                    };
                     whoTrigger[message.author].useWhat.push('01');
                     message.channel.send(
                         '股民語錄集：\n' +
@@ -166,9 +163,6 @@ const messageData = {
                 submessageData: {
                     '01.': {
                         execute(message) {
-                            whoTrigger[message.author] = {
-                                useWhat: []
-                            };
                             whoTrigger[message.author].useWhat.push('01');
                             message.channel.send(
                                 'Arm語錄,請輸入數字：\n' +
@@ -238,9 +232,6 @@ const messageData = {
                     },
                     '02': {
                         execute(message) {
-                            whoTrigger[message.author] = {
-                                useWhat: []
-                            };
                             whoTrigger[message.author].useWhat.push('02');
                             message.channel.send(
                                 'k哥語錄,請輸入數字：\n' +
@@ -331,9 +322,6 @@ const messageData = {
                     },
                     '03': {
                         execute(message) {
-                            whoTrigger[message.author] = {
-                                useWhat: []
-                            };
                             whoTrigger[message.author].useWhat.push('03');
                             message.channel.send(
                                 '```' +
@@ -359,9 +347,6 @@ const messageData = {
                     },
                     '04': {
                         execute(message) {
-                            whoTrigger[message.author] = {
-                                useWhat: []
-                            };
                             whoTrigger[message.author].useWhat.push('04');
                             message.channel.send(
                                 '```' +
@@ -386,9 +371,6 @@ const messageData = {
                     },
                     '05': {
                         execute(message) {
-                            whoTrigger[message.author] = {
-                                useWhat: []
-                            };
                             whoTrigger[message.author].useWhat.push('05');
                             message.channel.send(
                                 '```' +
@@ -427,9 +409,6 @@ const messageData = {
                     },
                     '06': {
                         execute(message) {
-                            whoTrigger[message.author] = {
-                                useWhat: []
-                            };
                             whoTrigger[message.author].useWhat.push('06');
                             message.channel.send(
                                 '```' +
@@ -455,9 +434,6 @@ const messageData = {
                     },
                     '07': {
                         execute(message) {
-                            whoTrigger[message.author] = {
-                                useWhat: []
-                            };
                             whoTrigger[message.author].useWhat.push('07');
                             message.channel.send(
                                 '```' +
@@ -485,9 +461,6 @@ const messageData = {
             },
             '02': {
                 execute(message) {
-                    whoTrigger[message.author] = {
-                        useWhat: []
-                    };
                     whoTrigger[message.author].useWhat.push('02');
                     message.channel.send(
                         '股民黑歷史：\n' +
@@ -501,9 +474,6 @@ const messageData = {
                 submessageData: {
                     '01': {
                         execute(message) {
-                            whoTrigger[message.author] = {
-                                useWhat: []
-                            };
                             whoTrigger[message.author].useWhat.push('01');
                             message.channel.send(
                                 '```' +
@@ -569,9 +539,6 @@ const messageData = {
                     },
                     '02': {
                         execute(message) {
-                            whoTrigger[message.author] = {
-                                useWhat: []
-                            };
                             whoTrigger[message.author].useWhat.push('02');
                             message.channel.send(
                                 '```' +
@@ -612,9 +579,6 @@ const messageData = {
             },
             '03': {
                 execute(message) {
-                    whoTrigger[message.author] = {
-                        useWhat: []
-                    };
                     whoTrigger[message.author].useWhat.push('03');
                     message.channel.send(
                         '股市月老簿：\n' +
