@@ -161,7 +161,7 @@ const messageData = {
                     );
                 },
                 submessageData: {
-                    '01.': {
+                    '01': {
                         execute(message) {
                             whoTrigger[message.author].useWhat.push('01');
                             message.channel.send(
