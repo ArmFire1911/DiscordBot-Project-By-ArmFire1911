@@ -23,7 +23,7 @@ let whoTrigger = {};
 //內嵌式訊息模組
 function createEmbed(data) {
     embed = new Discord.RichEmbed()
-        .setTitle('西宮結弦')
+        .setTitle('您的簡訊')
         .setThumbnail(data.avatarURL)
         .setColor(16750026)
         .addField(data.embedTitle, data.embedContent)
