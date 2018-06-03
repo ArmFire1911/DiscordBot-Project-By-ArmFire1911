@@ -28,7 +28,7 @@ function createEmbed(data) {
         .setColor(16750026)
         .addField(data.embedTitle, data.embedContent)
         .setImage(data.pictureURL)
-        .setFooter('來自結弦のIPhone')
+        .setFooter(data.comefrom)
         .setTimestamp();
     return embed;
 }
@@ -50,7 +50,8 @@ const messageData = {
                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '好噁心!不准靠近我四公尺以內! \n不…不過這樣子也有點可憐，不然你屏住呼吸可以再前進一公尺',
-                pictureURL: ''
+                pictureURL: '',
+                comefrom: '來自結弦のIPhone',
             }
             message.channel.send(createEmbed(embedData));
         }
@@ -61,7 +62,8 @@ const messageData = {
                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '今天的便當，只是剛好有剩餘的食材才順手做的唷。 \n因為清理很麻煩，所以絕對不准你剩下來，知道了吧！',
-                pictureURL: ''
+                pictureURL: '',
+                comefrom: '來自結弦のIPhone',
             }
             message.channel.send(createEmbed(embedData));
         }
@@ -72,7 +74,8 @@ const messageData = {
                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '別、別說傻話了……我我我都說沒有了不是嗎！？',
-                pictureURL: ''
+                pictureURL: '',
+                comefrom: '來自結弦のIPhone',
             }
             message.channel.send(createEmbed(embedData));
         }
@@ -83,7 +86,8 @@ const messageData = {
                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '花心是不好的哦...對吧，惠勝 ^^ :knife::chicken:',
-                pictureURL: ''
+                pictureURL: '',
+                comefrom: '來自結弦のIPhone',
             }
             message.channel.send(createEmbed(embedData));
         }
@@ -94,7 +98,8 @@ const messageData = {
                 avatarURL: 'https://i.imgur.com/bb10UWY.jpg',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '你要先吃飯? \n還是先洗澡? \n還是先·吃·我?',
-                pictureURL: ''
+                pictureURL: '',
+                comefrom: '來自結弦のIPhone',
             }
             message.channel.send(createEmbed(embedData));
         }
@@ -105,7 +110,8 @@ const messageData = {
                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '如果是你要拍的話...好吧，只有一次喔!',
-                pictureURL: 'https://i.imgur.com/3g8Y8jE.png'
+                pictureURL: 'https://i.imgur.com/3g8Y8jE.png',
+                comefrom: '來自結弦のIPhone',
             }
             message.channel.send(createEmbed(embedData));
         }
@@ -116,7 +122,8 @@ const messageData = {
                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '不...不行!絕對不行!!!!',
-                pictureURL: 'https://i.imgur.com/kKxUFRr.jpg'
+                pictureURL: 'https://i.imgur.com/kKxUFRr.jpg',
+                comefrom: '來自結弦のIPhone',
             }
             message.channel.send(createEmbed(embedData));
         }
@@ -180,7 +187,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '^^:knife::chicken:',
-                                        pictureURL: 'https://i.imgur.com/iJe1yjY.jpg'
+                                        pictureURL: 'https://i.imgur.com/iJe1yjY.jpg',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -192,7 +200,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '甘蔗王之名從此誕生',
-                                        pictureURL: 'https://i.imgur.com/DtEzkdn.jpg'
+                                        pictureURL: 'https://i.imgur.com/DtEzkdn.jpg',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -222,7 +231,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '為保護當事青蛙，進行馬賽克處理',
-                                        pictureURL: 'https://i.imgur.com/hbHCujS.png'
+                                        pictureURL: 'https://i.imgur.com/hbHCujS.png',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -252,7 +262,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                                        pictureURL: 'https://i.imgur.com/3oh9uYz.png'
+                                        pictureURL: 'https://i.imgur.com/3oh9uYz.png',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -264,7 +275,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                                        pictureURL: 'https://i.imgur.com/Wt3ggTS.jpg'
+                                        pictureURL: 'https://i.imgur.com/Wt3ggTS.jpg',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -276,7 +288,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                                        pictureURL: 'https://i.imgur.com/sjtUBP8.png'
+                                        pictureURL: 'https://i.imgur.com/sjtUBP8.png',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -288,7 +301,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                                        pictureURL: 'https://i.imgur.com/36VtpKq.png'
+                                        pictureURL: 'https://i.imgur.com/36VtpKq.png',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -300,7 +314,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                                        pictureURL: 'https://i.imgur.com/FoBhCkI.jpg'
+                                        pictureURL: 'https://i.imgur.com/FoBhCkI.jpg',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -312,7 +327,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
-                                        pictureURL: 'https://i.imgur.com/ajFuPl7.png'
+                                        pictureURL: 'https://i.imgur.com/ajFuPl7.png',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -337,7 +353,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '口味真重...',
-                                        pictureURL: 'https://i.imgur.com/yYXxCNR.jpg'
+                                        pictureURL: 'https://i.imgur.com/yYXxCNR.jpg',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -361,7 +378,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '五樓自肥',
-                                        pictureURL: 'https://i.imgur.com/7Qsixox.png'
+                                        pictureURL: 'https://i.imgur.com/7Qsixox.png',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -387,7 +405,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/lUxRae0.jpg',
                                         embedTitle: '[來自雪乃手機的訊息]',
                                         embedContent: '老公變甲甲，該回國了˙ˇ˙',
-                                        pictureURL: 'https://i.imgur.com/KeSMJCy.png'
+                                        pictureURL: 'https://i.imgur.com/KeSMJCy.png',
+                                        comefrom: '來自雪乃のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -399,7 +418,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/lUxRae0.jpg',
                                         embedTitle: '[來自雪乃手機的訊息]',
                                         embedContent: '%貓仔老公，害我氣到差點回國',
-                                        pictureURL: 'https://i.imgur.com/WdKrZlc.png'
+                                        pictureURL: 'https://i.imgur.com/WdKrZlc.png',
+                                        comefrom: '來自雪乃のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -424,7 +444,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '雞鴨!',
-                                        pictureURL: 'https://i.imgur.com/uc4kwl4.jpg'
+                                        pictureURL: 'https://i.imgur.com/uc4kwl4.jpg',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -449,7 +470,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '查無不法，謝謝指教˙ˇ˙',
-                                        pictureURL: 'https://i.imgur.com/7Rp7fsR.png'
+                                        pictureURL: 'https://i.imgur.com/7Rp7fsR.png',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -492,7 +514,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '花心阿尼4ni',
-                                        pictureURL: 'https://i.imgur.com/dwmVnuX.png'
+                                        pictureURL: 'https://i.imgur.com/dwmVnuX.png',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -504,7 +527,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '花心被打的阿尼:look_up:',
-                                        pictureURL: 'https://i.imgur.com/606lQCP.png'
+                                        pictureURL: 'https://i.imgur.com/606lQCP.png',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -517,7 +541,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
-                                        pictureURL: 'https://i.imgur.com/Vx06cOp.jpg'
+                                        pictureURL: 'https://i.imgur.com/Vx06cOp.jpg',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -529,7 +554,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
-                                        pictureURL: 'https://i.imgur.com/UYtMBUq.jpg'
+                                        pictureURL: 'https://i.imgur.com/UYtMBUq.jpg',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(embedData ? createEmbed(embedData) : '沒有這個選項啦!');
                                     delete whoTrigger[message.author];
@@ -555,7 +581,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '20噁男嘔嘔嘔嘔嘔',
-                                        pictureURL: 'https://i.imgur.com/evZLWQY.jpg'
+                                        pictureURL: 'https://i.imgur.com/evZLWQY.jpg',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -567,7 +594,8 @@ const messageData = {
                                         avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '蘿莉控色老頭，死刑!',
-                                        pictureURL: 'https://i.imgur.com/yNMYnve.png'
+                                        pictureURL: 'https://i.imgur.com/yNMYnve.png',
+                                        comefrom: '來自結弦のIPhone',
                                     };
                                     message.channel.send(createEmbed(embedData));
                                     delete whoTrigger[message.author];
@@ -594,7 +622,8 @@ const messageData = {
                                 avatarURL: 'https://i.imgur.com/vljAZT4.png',
                                 embedTitle: '[來自最可愛的結弦的訊息]',
                                 embedContent: '麗奈是papa的老婆，又麗奈是哭米口老婆的老婆，則papa是哭米口的老婆，得證^^',
-                                pictureURL: 'https://i.imgur.com/gehNYp8.jpg'
+                                pictureURL: 'https://i.imgur.com/gehNYp8.jpg',
+                                comefrom: '來自結弦のIPhone',
                             };
                             message.channel.send(createEmbed(embedData));
                             delete whoTrigger[message.author];
