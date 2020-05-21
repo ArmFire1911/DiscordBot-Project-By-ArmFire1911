@@ -1,5 +1,5 @@
 # 雲豹ΦωΦのDiscordBot Project
-[https://github.com/ArmFire1911/DiscordBot-Project-By-ArmFire1911](Project's URL)<br>
+[Project's URL](https://github.com/ArmFire1911/DiscordBot-Project-By-ArmFire1911)<br>
 這是一個基於Node.js、Discord.js、npm、SQLite並且在Heroku上運行的DiscordB<br>
 如果你想要複製這個Bot修改成自己的版本請歡迎取用<br>
 如果有問題請在Discord上詢問我<br>
@@ -18,7 +18,7 @@ My DiscordID is '雲豹 ΦωΦ#3950'<br>
 ***
 ## 運行這個計畫 Run This Project
 1. 首先你必須在Discord上創建一個帳號<br>
-2. 到[https://discord.com/developers/applications](Discord DEVELOPER PORTAL) 創建一個Applications(press botton 'New Application')<br>
+2. 到[Discord DEVELOPER PORTAL](https://discord.com/developers/applications) 創建一個Applications(press botton 'New Application')<br>
 3. 將你修改版本的檔案上傳到Github，並且在Heroku上建立一個App(按鈕點擊'Create new App'按鈕)<br>
 4. 點擊'Deployment method'中的'GitHub'，並且將你的GitHub帳號登入(關聯)到Heroku中，選擇該帳號，並且點擊'Search'按鈕<br>
 5. 下面會出現你的專案列表，找到該BOT的專案名稱，並且點擊'Connect'<br>
