@@ -26,7 +26,7 @@ const request = require('request');
 const makeItAlive = function () {
     request.get
         (
-        'https://armfire1911s-family.herokuapp.com/',
+        'https://discord-bot-by-armfire1911.herokuapp.com/',
         {},
         function (error, response, body) {
             console.log(`send a post`);
