@@ -37,6 +37,6 @@ const makeItAlive = function () {
         }
         );
 };
-setInterval(makeItAlive, 600000);
+setInterval(makeItAlive, 300000);
 
 //特別感謝Sup初音姊姊
