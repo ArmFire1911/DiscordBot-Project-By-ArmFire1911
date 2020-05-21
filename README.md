@@ -28,7 +28,7 @@ My DiscordID is '雲豹 ΦωΦ#3950'<br>
 理論上這樣應該就可以運作整個BOT了
 
 ***
-## Special thanks to
+## 感謝名單 Special Thanks
 1. papago89<br>
 2. frozenmouse<br>
 3. Euphokumiko<br>
