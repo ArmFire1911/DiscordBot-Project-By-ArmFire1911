@@ -7,7 +7,7 @@ client.on("ready", () => {
     console.log(`以 ${client.user.tag}身分登入了!`);
     console.log(`結弦回家囉!接觸了 ${client.users.size} 位成員，看到了 ${client.channels.size} 個頻道，加入了 ${client.guilds.size} 個伺服器`);
     //使用者狀態(線上online、閒置idle、請勿打擾dnd、隱形invisible)
-    client.user.setStatus('dnd')
+//    client.user.setStatus('dnd')
     client.user.setActivity('Chatting with 雲豹ΦωΦ', { type: 'PLAYING' })
 //    client.user.setPresence({ activity: { name: 'Chatting with 雲豹ΦωΦ' }, status: 'dnd' })
 });
