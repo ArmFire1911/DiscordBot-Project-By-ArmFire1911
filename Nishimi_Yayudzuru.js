@@ -7,8 +7,6 @@ client.on("ready", () => {
     console.log(`以 ${client.user.tag}身分登入了!`);
     console.log(`結弦回家囉!接觸了 ${client.users.cache.size} 位成員，看到了 ${client.channels.cache.size} 個頻道，加入了 ${client.guilds.cache.size} 個伺服器`);
     //使用者狀態(線上online、閒置idle、請勿打擾dnd、隱形invisible)
-//    client.user.setStatus('dnd')
-//    client.user.setActivity('Chatting with 雲豹ΦωΦ', { type: 'PLAYING' })
     client.user.setPresence({ activity: { name: 'Chatting with 雲豹ΦωΦ' }, status: 'dnd' })
 });
 
@@ -49,7 +47,7 @@ const messageData = {
     '結弦可愛': {
         execute(message) {
             embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                avatarURL: 'https://i.imgur.com/DorE9hI.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '好噁心!不准靠近我四公尺以內! \n不…不過這樣子也有點可憐，不然你屏住呼吸可以再前進一公尺',
                 pictureURL: '',
@@ -61,7 +59,7 @@ const messageData = {
     '這...這是給我的便當嗎?': {
         execute(message) {
             embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                avatarURL: 'https://i.imgur.com/DorE9hI.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '今天的便當，只是剛好有剩餘的食材才順手做的唷。 \n因為清理很麻煩，所以絕對不准你剩下來，知道了吧！',
                 pictureURL: '',
@@ -73,7 +71,7 @@ const messageData = {
     '結弦最喜歡我了，對吧!': {
         execute(message) {
             embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                avatarURL: 'https://i.imgur.com/DorE9hI.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '別、別說傻話了……我我我都說沒有了不是嗎！？',
                 pictureURL: '',
@@ -85,7 +83,7 @@ const messageData = {
     '那個女孩很可愛呢': {
         execute(message) {
             embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                avatarURL: 'https://i.imgur.com/DorE9hI.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '花心是不好的哦...對吧，惠勝 ^^ :knife::chicken:',
                 pictureURL: '',
@@ -109,7 +107,7 @@ const messageData = {
     '結弦，拍照~': {
         execute(message) {
             embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                avatarURL: 'https://i.imgur.com/DorE9hI.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '如果是你要拍的話...好吧，只有一次喔!',
                 pictureURL: 'https://i.imgur.com/3g8Y8jE.png',
@@ -121,7 +119,7 @@ const messageData = {
     '結弦，拍照^^': {
         execute(message) {
             embedData = {
-                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                avatarURL: 'https://i.imgur.com/DorE9hI.png',
                 embedTitle: '[來自最可愛的老婆大人的訊息]',
                 embedContent: '不...不行!絕對不行!!!!',
                 pictureURL: 'https://i.imgur.com/kKxUFRr.jpg',
@@ -186,7 +184,7 @@ const messageData = {
                             '01': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '^^:knife::chicken:',
                                         pictureURL: 'https://i.imgur.com/iJe1yjY.jpg',
@@ -199,7 +197,7 @@ const messageData = {
                             '02': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '甘蔗王之名從此誕生',
                                         pictureURL: 'https://i.imgur.com/DtEzkdn.jpg',
@@ -230,7 +228,7 @@ const messageData = {
                             '04': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '為保護當事青蛙，進行馬賽克處理',
                                         pictureURL: 'https://i.imgur.com/hbHCujS.png',
@@ -261,7 +259,7 @@ const messageData = {
                             '01': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                                         pictureURL: 'https://i.imgur.com/3oh9uYz.png',
@@ -274,7 +272,7 @@ const messageData = {
                             '02': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                                         pictureURL: 'https://i.imgur.com/Wt3ggTS.jpg',
@@ -287,7 +285,7 @@ const messageData = {
                             '03': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                                         pictureURL: 'https://i.imgur.com/sjtUBP8.png',
@@ -300,7 +298,7 @@ const messageData = {
                             '04': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                                         pictureURL: 'https://i.imgur.com/36VtpKq.png',
@@ -313,7 +311,7 @@ const messageData = {
                             '05': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                                         pictureURL: 'https://i.imgur.com/FoBhCkI.jpg',
@@ -326,7 +324,7 @@ const messageData = {
                             '06': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '呷kㄝ肖年家~係禱灰~~~',
                                         pictureURL: 'https://i.imgur.com/ajFuPl7.png',
@@ -352,7 +350,7 @@ const messageData = {
                             '01': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '口味真重...',
                                         pictureURL: 'https://i.imgur.com/yYXxCNR.jpg',
@@ -377,7 +375,7 @@ const messageData = {
                             '01': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '五樓自肥',
                                         pictureURL: 'https://i.imgur.com/7Qsixox.png',
@@ -443,7 +441,7 @@ const messageData = {
                             '01': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '雞鴨!',
                                         pictureURL: 'https://i.imgur.com/uc4kwl4.jpg',
@@ -469,7 +467,7 @@ const messageData = {
                             '01': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '查無不法，謝謝指教˙ˇ˙',
                                         pictureURL: 'https://i.imgur.com/7Rp7fsR.png',
@@ -513,7 +511,7 @@ const messageData = {
                             '01': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '花心阿尼4ni',
                                         pictureURL: 'https://i.imgur.com/dwmVnuX.png',
@@ -526,7 +524,7 @@ const messageData = {
                             '02': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '花心被打的阿尼:look_up:',
                                         pictureURL: 'https://i.imgur.com/606lQCP.png',
@@ -540,7 +538,7 @@ const messageData = {
                             '03': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
                                         pictureURL: 'https://i.imgur.com/Vx06cOp.jpg',
@@ -553,7 +551,7 @@ const messageData = {
                             '04': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '花心是不好的喔，Amulet1 ^^ :knife::chicken:',
                                         pictureURL: 'https://i.imgur.com/UYtMBUq.jpg',
@@ -580,7 +578,7 @@ const messageData = {
                             '01': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '20噁男嘔嘔嘔嘔嘔',
                                         pictureURL: 'https://i.imgur.com/evZLWQY.jpg',
@@ -593,7 +591,7 @@ const messageData = {
                             '02': {
                                 execute(message) {
                                     embedData = {
-                                        avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                        avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                         embedTitle: '[來自最可愛的結弦的訊息]',
                                         embedContent: '蘿莉控色老頭，死刑!',
                                         pictureURL: 'https://i.imgur.com/yNMYnve.png',
@@ -621,7 +619,7 @@ const messageData = {
                     '01': {
                         execute(message) {
                             embedData = {
-                                avatarURL: 'https://i.imgur.com/vljAZT4.png',
+                                avatarURL: 'https://i.imgur.com/DorE9hI.png',
                                 embedTitle: '[來自最可愛的結弦的訊息]',
                                 embedContent: '麗奈是papa的老婆，又麗奈是哭米口老婆的老婆，則papa是哭米口的老婆，得證^^',
                                 pictureURL: 'https://i.imgur.com/gehNYp8.jpg',

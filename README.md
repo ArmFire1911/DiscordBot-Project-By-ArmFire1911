@@ -1,4 +1,4 @@
-# 雲豹ΦωΦ#のDiscordBot Project
+# 雲豹ΦωΦのDiscordBot Project
 這是一個基於Node.js、Discord.js、npm、SQLite並且在Heroku上運行的DiscordB
 如果你想要複製這個Bot修改成自己的版本請歡迎取用
 如果有問題請在Discord上詢問我
@@ -23,6 +23,8 @@ My DiscordID is '雲豹 ΦωΦ#3950'
 5. 下面會出現你的專案列表，找到該BOT的專案名稱，並且點擊'Connect'
 6. Automatic deploys欄位中是讓你設定在你更新專案後自動更新該BOT運行使用的檔案狀態，請在'Choose a branch to deploy'欄位中選擇你的主要版本(master)，這是GitHub預設的主要程式碼版本
 7. 選取'Enable Automatic Deploys'按鈕，這樣BOT將會在有更新程式碼內容時自動更新並部署
+8. 在Heroku>Setting>Config Vars中，KEY欄打上'token_'+BOT名稱(ex.token_Reiko)，VALUE欄打上Token本身
+理論上這樣應該就可以運作整個BOT了
 
 ***
 ## Special thanks to

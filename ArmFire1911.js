@@ -1,16 +1,16 @@
-//±Ò°Ê¼Ò²Õ
+//ï¿½Ò°Ê¼Ò²ï¿½
 const cp = require('child_process');
 const token = process.env.token;
 const forkBot = function (code) {
-    const token = process.env['token_' + code]; //¨ú±o¦¹botªºtoken
+    const token = process.env['token_' + code]; //get your Bot's Token on Heroku Auto
     const env = { token: token };
-    const bot = cp.fork(`${__dirname}/${code}.js`, { env: env }); //³]©w¦¹botªºÀô¹ÒÅÜ¼Æ
+    const bot = cp.fork(`${__dirname}/${code}.js`, { env: env }); //bot on or off
     bot.on('exit', () => {
         //refork after 10s
         setTimeout(() => { forkBot(code); }, 10000);
     });
 }
-//fork
+//æ±ºå®šå“ªäº›BOTè¦é‹ä½œ
 forkBot('Nishimi_Yayudzuru');
 forkBot('G11');
 forkBot('Reiko');
@@ -39,4 +39,4 @@ const makeItAlive = function () {
 };
 setInterval(makeItAlive, 600000);
 
-//¥H¤W¹B§@¼Ò²Õ·PÁÂ¡usupªì­µ©j©j¡v´£¨ÑÀ°§U
+//ç‰¹åˆ¥æ„Ÿè¬SupåˆéŸ³å§Šå§Š
