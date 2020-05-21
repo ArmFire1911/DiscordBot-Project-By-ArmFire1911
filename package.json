@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "ArmFire1911",
   "scripts": {
-    "start": "node ArmFire1911.js"
+    "start": "node control.js"
   },
   "author": "ArmFire1911",
   "dependencies": {

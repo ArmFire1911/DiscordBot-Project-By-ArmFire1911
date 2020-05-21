@@ -1,34 +1,34 @@
 # 雲豹ΦωΦのDiscordBot Project
 [Project's URL](https://github.com/ArmFire1911/DiscordBot-Project-By-ArmFire1911)<br>
-這是一個基於Node.js、Discord.js、npm、SQLite並且在Heroku上運行的DiscordBot<br>
-如果你想要複製這個Bot修改成自己的版本請歡迎取用<br>
-如果有問題請在Discord上詢問我<br>
-我的 DicordID '雲豹 ΦωΦ#3950'<br>
-This DiscordBot project is base on Node.js、Discord.js、npm、SQLite and run on the Heroku .<br>
-It's free to edit to your own DiscordBot, if you have problem on this , you can ask me on discord.<br>
-My DiscordID is '雲豹 ΦωΦ#3950'<br>
+<br>
+This is a DiscordBot project base on Node.js, Discord.js, npm, SQLite and run on the Heroku.<br>
+It's free to edit to your own version DiscordBot, if you have problem on this , you can ask me on discord.<br>
+<br>
+My Discord ID is '雲豹 ΦωΦ#3950'.<br>
 
 ***
-## 你需要的工具 What tools you need
-1. VScode or any IDE you like and support JavaScript<br>
+## What tools you need
+1. VScode or any IDE which support JavaScript<br>
 2. Discord Account<br>
 3. Github Account<br>
 4. Heroku Account<br>
 
 ***
-## 運行這個計畫 Run This Project
-1. 首先你必須在[Discord](https://discord.com/)上有一個帳號<br>
-2. 到[Discord DEVELOPER PORTAL](https://discord.com/developers/applications) 創建一個Applications(press botton 'New Application')<br>
-3. 將你修改版本的檔案上傳到Github，並且在[Heroku](https://dashboard.heroku.com/apps)上建立一個App(按鈕點擊'Create new App'按鈕)<br>
-4. 點擊'Deployment method'中的'GitHub'，並且將你的GitHub帳號登入(關聯)到Heroku中，選擇該帳號，並且點擊'Search'按鈕<br>
-5. 下面會出現你的專案列表，找到該BOT的專案名稱，並且點擊'Connect'<br>
-6. Automatic deploys欄位中是讓你設定在你更新專案後自動更新該BOT運行使用的檔案狀態，請在'Choose a branch to deploy'欄位中選擇你的主要版本(master)，這是GitHub預設的主要程式碼版本<br>
-7. 選取'Enable Automatic Deploys'按鈕，這樣BOT將會在有更新程式碼內容時自動更新並部署<br>
-8. 在Heroku>Setting>Config Vars中，KEY欄打上'token_'+BOT名稱(ex.token_Reiko)，VALUE欄打上Token本身<br>
-理論上這樣應該就可以運作整個BOT了
+## How to run This Project
+1. First, you need have a Discord account. [Discord](https://discord.com/)<br>
+2. Go to [Discord DEVELOPER PORTAL](https://discord.com/developers/applications) create a Applications(click the botton 'New Application').<br>
+3. Upload your version DiscordBot to [GitHub](https://github.com/), and create a App on [Heroku](https://dashboard.heroku.com/apps) (click the botton 'Create new App').<br>
+4. Go to page 'Deployment method'and find the 'GitHub' botton, login/link your GitHub account and click the botton 'Search' botton.<br>
+5. Your repo should be there, find the repo's name, and click 'Connect'<br>
+6. 'Automatic deploys' is where you setting your app auto deploy Yes or Not when you update your repo, please choose 'Master' at 'Choose a branch to deploy', this is the main version of GitHub repo default. <br>
+7. click the 'Enable Automatic Deploys' botton, now app will auto deploy when you update your repo.<br>
+8. Go to Heroku>Setting>Config Vars, write 'token_'+'BOT's name'(ex.token_Alpha) into 'KEY',write 'token(you can find at Discord DEVELOPER PORTAL) into the 'VALUE'.<br>
+<br>
+when all of this is down , Bot should be work, the last thing is invite your Bot to your own Dicord server.<br>
+If you don't know how to invite your bot, google 'invite discord bot' and it should be answer you.<br>
 
 ***
-## 感謝名單 Special Thanks
+## Special Thanks
 1. papago89<br>
 2. frozenmouse<br>
 3. Euphokumiko<br>
